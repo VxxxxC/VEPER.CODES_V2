@@ -1,4 +1,3 @@
-import React from "react";
 import Selector from "@components/TechIcons";
 import MotionDiv from "@components/MotionDiv";
 import {
@@ -16,7 +15,7 @@ const Home = () => {
   };
   return (
     <>
-      <MotionDiv delay={0.5}>
+      <MotionDiv>
         <main
           id="bio"
           className="inline-flex flex-col item-start"

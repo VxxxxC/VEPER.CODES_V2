@@ -1,7 +1,4 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-@custom-variant dark (&:where(.dark, .dark *));
-
 
 :root {
   font-family: --apple-system, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -23,7 +20,7 @@ html {
 }
 
 body {
-  font-family: --apple-system, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Varela Round", --apple-system, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }

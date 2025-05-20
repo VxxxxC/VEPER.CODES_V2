@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <html>
-        <body className="min-h-screen bg-stone-300 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-50 font-vr flex-col text-center pt-20 pb-5 duration-500">
+        <body className="min-h-screen bg-stone-300 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-50 flex-col text-center pt-20 pb-5 duration-500">
           <div className="sticky top-0 mt-2 mb-10 p-2 bg-stone-600">
             <div className="flex flex-row justify-center items-center">
               <nav>
