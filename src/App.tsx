@@ -4,7 +4,7 @@ import Navbar from "@components/NavBar.tsx";
 import Home from "@routes/home";
 import Works from "@routes/works";
 import Projects from "@routes/projects";
-import { Box, Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
+import { Box, GridItem, SimpleGrid } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra/components/ui/color-mode";
 
 function App() {
