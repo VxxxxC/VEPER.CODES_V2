@@ -10,7 +10,8 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
-      "@routes/*": ["./src/routes/*"]
+      "@routes/*": ["./src/routes/*"],
+      "@chakra/*": ["./src/src/*"]
     },
 
     /* Bundler mode */
