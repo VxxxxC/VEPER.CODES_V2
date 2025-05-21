@@ -16,7 +16,7 @@ export default function Navbar() {
           alignItems="center"
           gapX="5"
         >
-          <Flex direction="row" gapX={10}>
+          <Flex className="navbar" direction="row" gapX={10}>
             <Link to="/"> HOME </Link>
             <Link to="/works"> WORKS </Link>
             <Link to="/projects"> PROJECTS </Link>
