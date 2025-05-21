@@ -11,7 +11,7 @@ function App() {
     <>
       <html>
         <Head title="VEPER.CODES" />
-        <body className="min-h-screen bg-stone-300 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-50 flex-col text-center pt-20 pb-5 duration-500">
+        <body className="min-h-screen bg-stone-300 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-50 flex-col text-center pt-20 pb-5 transition duration-500 ease-in-out">
           <Navbar />
           <div className="card">
             <Routes>

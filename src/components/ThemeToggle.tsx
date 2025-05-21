@@ -1,77 +1,33 @@
-import { useEffect, useState } from "react";
-import { IoSunny, IoMoon } from "react-icons/io5";
+import { AnimatePresence, motion } from "motion/react";
+import { IconButton } from "@chakra-ui/react";
+import {
+  useColorMode,
+  useColorModeValue,
+} from "@chakra/components/ui/color-mode";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 function ThemeToggle() {
-  const root = document.documentElement;
-  const themes = ["light", "dark"];
-  const [theme, setTheme] = useState(() => {
-    if (
-      typeof localStorage !== undefined &&
-      localStorage.getItem("theme") === "dark"
-    ) {
-      return "dark";
-    }
-    return "light";
-  });
-
-  const toggleTheme = () => {
-    const color = theme === "dark" ? "light" : "dark";
-
-    localStorage.setItem("theme", color);
-    setTheme(color);
-  };
-
-  /* set the initial theme color , when first loading in */
-  window.onload = () => {
-    root.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-    setTheme("dark");
-  };
-
-  /* set theme change color, when "theme" triggered */
-  useEffect(() => {
-    if (theme === "light") {
-      root.classList.remove("dark");
-    } else {
-      root.classList.add("dark");
-    }
-  }, [theme]);
-
-  /* check the theme color and remain the color , between the page changing */
-  useEffect(() => {
-    if (
-      typeof localStorage !== undefined &&
-      localStorage.getItem("theme") === "dark"
-    ) {
-      root.classList.add("dark");
-      setTheme("dark");
-    } else {
-      root.classList.remove("dark");
-      setTheme("light");
-    }
-  }, []);
+  const { toggleColorMode } = useColorMode();
 
   return (
-    <div
-      className="my-3 w-[100px] flex justify-center rounded-full bg-orange-500 dark:bg-purple-500"
-      aria-label="theme toggle switch"
-    >
-      {themes.map((color) => {
-        const toggle = color === theme;
-        return (
-          <button
-            key={color}
-            className={`${
-              toggle ? "bg-white text-black" : ""
-            }  p-2 rounded-full flex justify-center w-[100%]`}
-            onClick={() => toggleTheme()}
-          >
-            {color === "dark" ? <IoMoon /> : <IoSunny />}
-          </button>
-        );
-      })}
-    </div>
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        style={{ display: "inline-block" }}
+        key={useColorModeValue("light", "dark")}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <IconButton
+          aria-label="Toggle theme"
+          colorPalette={useColorModeValue("purple", "orange")}
+          onClick={toggleColorMode}
+        >
+          {useColorModeValue(<FiMoon />, <FiSun />)}
+        </IconButton>
+      </motion.div>
+    </AnimatePresence>
   );
 }
-
 export default ThemeToggle;
