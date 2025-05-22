@@ -19,12 +19,13 @@ const Home = () => {
       <MotionDiv title="Home">
         <Container
           id="bio"
+          gapY={5}
           className="inline-flex flex-col item-start"
           aria-label="bio"
         >
           <Container>
-            <Flex direction="row" justifyContent="space-evenly">
-              <div className="inline-flex flex-col items-center justify-center">
+            <Flex direction="row" justifyContent="space-evenly" gapX={5}>
+              <div className="inline-flex flex-col items-center justify-center whitespace-nowrap">
                 <div className="my-2 text-4xl font-bold">Veper Ho</div>
                 <div className="my-2 text-sm">
                   Codes / Subcultures / Indie Music
