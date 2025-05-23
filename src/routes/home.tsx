@@ -20,11 +20,18 @@ const Home = () => {
         <Container
           id="bio"
           gapY={5}
-          className="inline-flex flex-col item-start"
           aria-label="bio"
+          display="inline-flex"
+          flexDir={{ base: "column" }}
         >
           <Container>
-            <Flex direction="row" justifyContent="space-evenly" gapX={5}>
+            <Flex
+              direction={{ base: "column", lg: "row" }}
+              justifyContent={{ base: "center", lg: "space-between" }}
+              alignItems={{ base: "center" }}
+              gapX={{ lg: 5 }}
+              gapY={{ base: 5 }}
+            >
               <div className="inline-flex flex-col items-center justify-center whitespace-nowrap">
                 <div className="my-2 text-4xl font-bold">Veper Ho</div>
                 <div className="my-2 text-sm">

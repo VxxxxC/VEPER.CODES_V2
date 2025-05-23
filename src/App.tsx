@@ -4,7 +4,7 @@ import Navbar from "@components/NavBar.tsx";
 import Home from "@routes/home";
 import Works from "@routes/works";
 import Projects from "@routes/projects";
-import { Box, GridItem, SimpleGrid } from "@chakra-ui/react";
+import { Box, GridItem } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra/components/ui/color-mode";
 
 function App() {
@@ -20,7 +20,16 @@ function App() {
         )}
         transition="0.8s ease-in-out"
       >
-        <SimpleGrid columns={5}>
+        <Box
+          base={{
+            display: "flex",
+            flexDir: "column",
+          }}
+          lg={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
+          }}
+        >
           <GridItem colSpan={3} colStart={2}>
             <Navbar />
             <div className="card">
@@ -31,7 +40,7 @@ function App() {
               </Routes>
             </div>
           </GridItem>
-        </SimpleGrid>
+        </Box>
       </Box>
     </>
   );
