@@ -2,9 +2,10 @@ import Selector from "@components/TechIcons";
 import Revamp from "./revamp";
 import RevampMobile from "./revampMobile";
 import NewFeature from "./newFeature";
-import JobDemoTab from "@components/jobDemoTab";
-import type { tabsPropsType } from "../works";
+import NestedTab from "@components/NestedTab";
+import type { tabsPropsType } from "@components/NestedTab";
 import { v4 as uuidv4 } from "uuid";
+import { Container } from "@chakra-ui/react";
 
 const Boxs = () => {
   const tabs: tabsPropsType[] = [
@@ -26,7 +27,7 @@ const Boxs = () => {
   ];
 
   return (
-    <div id="boxs" className="h-full w-full flex flex-col items-center">
+    <Container id="boxs" className="h-full w-full flex flex-col items-center">
       <div className="flex flex-row items-center space-x-1">
         <div className="text-xl font-bold">BOXS - Frontend Developer</div>
         <div className="text-sm font-black px-1 leading-4 dark:bg-slate-500 text-cyan-500 bg-slate-300">
@@ -76,13 +77,13 @@ const Boxs = () => {
         </fieldset>
       </div>
 
-      <div className="mt-5">
+      <Container fluid>
         <fieldset className="h-[75vh] text-left px-5 rounded-lg border border-zinc-400 dark:border-zinc-700">
           <legend className="px-2 text-base font-medium">Demo</legend>
-          <JobDemoTab tabs={tabs} />
+          <NestedTab tabs={tabs} />
         </fieldset>
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };
 
