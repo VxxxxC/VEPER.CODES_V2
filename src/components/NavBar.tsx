@@ -7,7 +7,7 @@ export default function Navbar() {
     <>
       <Flex direction="row" justifyContent="center">
         <Box
-          width="80%"
+          width="100%"
           paddingY={3}
           paddingX={5}
           display="flex"

@@ -17,7 +17,6 @@ const MotionDiv = ({ title, description, children }: MotionDivType) => {
 
   return (
     <motion.article
-      className="flex flex-wrap justify-evenly gap-8"
       variants={animateConfig}
       initial="hidden"
       animate="enter"

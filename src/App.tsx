@@ -4,7 +4,7 @@ import Navbar from "@components/NavBar.tsx";
 import Home from "@routes/home";
 import Works from "@routes/works";
 import Projects from "@routes/projects";
-import { Box } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra/components/ui/color-mode";
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
       >
         <Box
           className="OuterBox"
+          width="full"
           base={{
             display: "flex",
             flexDir: "column",
@@ -36,8 +37,9 @@ function App() {
             maxWidth: "100rem",
           }}
         >
-          <Box
+          <Container
             className="InnerBox"
+            width="full"
             lg={{ gridColumnStart: 2, gridColumnEnd: 5 }}
           >
             <Navbar />
@@ -48,7 +50,7 @@ function App() {
                 <Route path="projects" element={<Projects />} />
               </Routes>
             </div>
-          </Box>
+          </Container>
         </Box>
       </Box>
     </>
