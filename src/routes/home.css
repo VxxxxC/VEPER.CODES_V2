@@ -1,4 +1,6 @@
-     span {
+@import "tailwindcss";
+
+      span {
         padding-left: 10px;
         padding-right: 10px;
       }
@@ -13,12 +15,15 @@
       legend {
         padding: 10px;
       }
+      table{
+        width: 100%;
+      }
       td {
         padding-top: 15px;
         padding-bottom: 15px;
         padding-left: 10px;
         padding-right: 10px;
-        border: 5px double lightslategray;
+        /* border: 5px double lightslategray; */
       }
       li {
         font-size: 13px;
@@ -28,7 +33,4 @@
       a {
         margin-top: 10px;
         margin-bottom: 10px;
-      }
-      table {
-        width: 100%;
       }

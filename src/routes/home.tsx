@@ -8,23 +8,27 @@ import {
 } from "react-icons/io5";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "./home.css";
-import { Box, Button, Center, Container, Flex } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Table } from "@chakra-ui/react";
+import { useColorMode } from "@chakra/components/ui/color-mode";
 
 const Home = () => {
   const btn = (value: string) => {
     localStorage.setItem("page", value);
   };
+
+  const { colorMode } = useColorMode();
   return (
     <>
       <MotionDiv title="Home">
-        <Container
+        <Box
           id="bio"
           gapY={5}
           aria-label="bio"
-          display="inline-flex"
-          flexDir={{ base: "column" }}
+          display="flex"
+          flexDir="column"
+          width="full"
         >
-          <Container>
+          <Box>
             <Flex
               direction={{ base: "column", lg: "row" }}
               justifyContent={{ base: "center", lg: "space-between" }}
@@ -59,44 +63,43 @@ const Home = () => {
                 </Button>
               </a>
             </Center>
-          </Container>
-          <Container>
+          </Box>
+          <Box>
             <Box paddingY={5} className="flex flex-col items-start">
               <h1 className="text-xl font-black mt-10">
                 Bio
                 <div className="mb-2 h-1 bg-gray-600"></div>
               </h1>
             </Box>
-            <Box className="text-md font-medium my-2 flex flex-col items-start">
-              <table>
-                <tbody>
-                  <tr>
-                    <td>1989</td>
-                    <td>Born in Hong Kong</td>
-                  </tr>
-                  <tr>
-                    <td>2021</td>
-                    <td>
+            <Box className="overflow-x-scroll">
+              {/* FIXME NEED TO FIX FOR THE TABLE WIDTH  */}
+              <Table.Root
+                color={colorMode === "light" ? "pink.600" : "pink.300"}
+                size="sm"
+                variant="outline"
+                showColumnBorder
+              >
+                <Table.Body>
+                  <Table.Row>
+                    <Table.Cell>2021</Table.Cell>
+                    <Table.Cell>
                       Say goodbye to my 12 years career in aviation engineering
-                      industry
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2021 - 2022</td>
-                    <td>Career Transition</td>
-                  </tr>
-
-                  <tr>
-                    <td>2022</td>
-                    <td>
+                    </Table.Cell>
+                  </Table.Row>
+                  <Table.Row>
+                    <Table.Cell>2021 - 2022</Table.Cell>
+                    <Table.Cell>Career Transition</Table.Cell>
+                  </Table.Row>
+                  <Table.Row>
+                    <Table.Cell>2022</Table.Cell>
+                    <Table.Cell>
                       Graduated AI & Programming Micro Master course at Tecky
                       Academy
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>FEB 2023 - OCT 2024</td>
-                    <td>
+                    </Table.Cell>
+                  </Table.Row>
+                  <Table.Row>
+                    <Table.Cell>FEB 2023 - OCT 2024</Table.Cell>
+                    <Table.Cell>
                       <Flex>
                         <Center>
                           <a href="/works/#boxs">
@@ -115,14 +118,14 @@ const Home = () => {
                           </a>
                         </Center>
                       </Flex>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </Table.Cell>
+                  </Table.Row>
+                </Table.Body>
+              </Table.Root>
             </Box>
-          </Container>
+          </Box>
 
-          <Container>
+          <Box>
             <Box paddingY={5} className="flex flex-col items-start">
               <h1 className="text-xl font-black mt-10">
                 Tech I Use
@@ -131,7 +134,12 @@ const Home = () => {
             </Box>
             <Box
               padding={5}
-              className="p-5 bg-zinc-400 dark:bg-zinc-700 rounded-lg flex flex-col items-start"
+              bg={
+                colorMode === "light"
+                  ? "oklch(70.5% 0.015 286.067)"
+                  : "oklch(27.4% 0.006 286.033)"
+              }
+              className="p-5 rounded-lg flex flex-col items-start"
             >
               <li>RESTful API</li>
               <li>AJAX</li>
@@ -143,32 +151,54 @@ const Home = () => {
             </Box>
             <fieldset className="border border-zinc-500">
               <legend>Frontend</legend>
-              <p>Typescript</p>
-              <p>React.js</p>
-              <p>React-Native</p>
-              <p>Redux</p>
-              <p>Redux-Thunk</p>
-              <p>Vue.js</p>
-              <p>Tailwindcss</p>
+              <Flex
+                padding={2}
+                direction={{ base: "column" }}
+                justifyContent={{ base: "start" }}
+                alignItems={{ base: "center", lg: "start" }}
+                gapY={5}
+              >
+                <p>Typescript</p>
+                <p>React.js</p>
+                <p>React-Native</p>
+                <p>Redux</p>
+                <p>Redux-Thunk</p>
+                <p>Vue.js</p>
+                <p>Tailwindcss</p>
+              </Flex>
             </fieldset>
             <fieldset className="border border-zinc-500">
               <legend>Backend</legend>
-              <p>Node.js</p>
-              <p>Express.js</p>
-              <p>PostgreSQL</p>
-              <p>MongoDB</p>
+              <Flex
+                padding={2}
+                direction={{ base: "column" }}
+                justifyContent={{ base: "start" }}
+                alignItems={{ base: "center", lg: "start" }}
+                gapY={5}
+              >
+                <p>Node.js</p>
+                <p>Express.js</p>
+                <p>PostgreSQL</p>
+                <p>MongoDB</p>
+              </Flex>
             </fieldset>
             <fieldset className="font-black text-lg text-orange-500 border-4 border-teal-400 dark:border-cyan-500">
               <legend>Currently Learning</legend>
-              <div className="flex flex-row justify-center items-center mobile:flex-col">
+              <Flex
+                padding={2}
+                direction={{ base: "column", lg: "row" }}
+                justifyContent={{ base: "start" }}
+                alignItems={{ base: "center" }}
+                gapY={5}
+              >
                 <Selector props="Blender" size={30} />
                 <Selector props="Rust" size={30} />
                 <Selector props="Solidity" size={30} />
-              </div>
+              </Flex>
             </fieldset>
-          </Container>
+          </Box>
 
-          <Container>
+          <Box>
             <Box paddingY={5} className="flex flex-col items-start">
               <h1 className="text-xl font-black mt-10">
                 <IoHeartOutline size={30} />
@@ -181,9 +211,9 @@ const Home = () => {
               <p>climbing 🧗</p>
               <p>coffee ☕️</p>
             </Box>
-          </Container>
+          </Box>
 
-          <Container>
+          <Box>
             <Box paddingY={5} className="flex flex-col items-start">
               <h1 className="text-xl font-black mt-10">
                 Connect
@@ -217,8 +247,8 @@ const Home = () => {
                 LinkedIn
               </a>
             </Box>
-          </Container>
-        </Container>
+          </Box>
+        </Box>
       </MotionDiv>
     </>
   );
