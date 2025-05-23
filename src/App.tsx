@@ -4,23 +4,28 @@ import Navbar from "@components/NavBar.tsx";
 import Home from "@routes/home";
 import Works from "@routes/works";
 import Projects from "@routes/projects";
-import { Box, GridItem } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra/components/ui/color-mode";
 
 function App() {
   return (
     <>
       <Box
-        height="100%"
-        width="100%"
+        className="App-Container"
+        width="full"
+        height="full"
         bg={useColorModeValue("gray.150", "gray.900")}
         color={useColorModeValue(
           "oklch(37% 0.013 285.805)",
           "oklch(92% 0.004 286.32)",
         )}
         transition="0.8s ease-in-out"
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
       >
         <Box
+          className="OuterBox"
           base={{
             display: "flex",
             flexDir: "column",
@@ -28,18 +33,22 @@ function App() {
           lg={{
             display: "grid",
             gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
+            maxWidth: "100rem",
           }}
         >
-          <GridItem colSpan={3} colStart={2}>
+          <Box
+            className="InnerBox"
+            lg={{ gridColumnStart: 2, gridColumnEnd: 5 }}
+          >
             <Navbar />
-            <div className="card">
+            <div className="App">
               <Routes>
                 <Route index element={<Home />} />
                 <Route path="works" element={<Works />} />
                 <Route path="projects" element={<Projects />} />
               </Routes>
             </div>
-          </GridItem>
+          </Box>
         </Box>
       </Box>
     </>
