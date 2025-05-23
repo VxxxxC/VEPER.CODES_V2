@@ -13,9 +13,12 @@ function App() {
       <Box
         height="100%"
         width="100%"
-        bg={useColorModeValue("gray.300", "gray.850")}
-        transition="background 0.8s ease-in-out"
-        className="bg-stone-300 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-50"
+        bg={useColorModeValue("gray.150", "gray.900")}
+        color={useColorModeValue(
+          "oklch(37% 0.013 285.805)",
+          "oklch(92% 0.004 286.32)",
+        )}
+        transition="0.8s ease-in-out"
       >
         <SimpleGrid columns={5}>
           <GridItem colSpan={3} colStart={2}>
