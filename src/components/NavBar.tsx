@@ -18,14 +18,16 @@ export default function Navbar() {
         justifyContent="center"
         alignItems="center"
       >
-        <Link to="/">
-          <div
-            className="animate-flickering-neon relative"
-            aria-lable="header logo"
-          >
-            VEPER.CODES
-          </div>
-        </Link>
+        <Box marginX={5}>
+          <Link to="/">
+            <div
+              className="animate-flickering-neon relative"
+              aria-lable="header logo"
+            >
+              VEPER.CODES
+            </div>
+          </Link>
+        </Box>
         <Stack
           width="100%"
           p={1}
