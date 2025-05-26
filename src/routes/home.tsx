@@ -77,7 +77,7 @@ const Home = () => {
               {/* FIXME NEED TO FIX FOR THE TABLE WIDTH  */}
               <Table.Root
                 color={colorMode === "light" ? "pink.600" : "pink.300"}
-                size="sm"
+                size="lg"
                 variant="outline"
                 showColumnBorder
               >
@@ -136,7 +136,7 @@ const Home = () => {
             </Box>
             <Box
               padding={5}
-              bg={colorMode === "light" ? "gray.200" : "gray.800"}
+              bg={colorMode === "light" ? "gray.300" : "gray.800"}
               className="p-5 rounded-lg flex flex-col items-start"
             >
               <li>RESTful API</li>

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
 li {
-  @apply text-lg;
+  @apply text-base;
+}
+
+fieldset {
+  @apply border border-gray-700;
 }

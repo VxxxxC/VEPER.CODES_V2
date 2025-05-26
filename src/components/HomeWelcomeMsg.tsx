@@ -10,7 +10,7 @@ const HomeWelcomeMsg = () => {
   const { colorMode } = useColorMode();
   return (
     <Box
-      bgColor={colorMode === "light" ? "gray.200" : "gray.800"}
+      bgColor={colorMode === "light" ? "gray.300" : "gray.800"}
       rounded="md"
       p={2}
       m={5}
