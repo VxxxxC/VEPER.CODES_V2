@@ -10,6 +10,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import "./home.css";
 import { Box, Button, Center, Flex, Table } from "@chakra-ui/react";
 import { useColorMode } from "@chakra/components/ui/color-mode";
+import HomeWelcomeMsg from "@components/HomeWelcomeMsg";
 
 const Home = () => {
   const btn = (value: string) => {
@@ -19,6 +20,7 @@ const Home = () => {
   const { colorMode } = useColorMode();
   return (
     <>
+      <HomeWelcomeMsg />
       <MotionDiv title="Home">
         <Box
           id="bio"
@@ -134,11 +136,7 @@ const Home = () => {
             </Box>
             <Box
               padding={5}
-              bg={
-                colorMode === "light"
-                  ? "oklch(70.5% 0.015 286.067)"
-                  : "oklch(27.4% 0.006 286.033)"
-              }
+              bg={colorMode === "light" ? "gray.200" : "gray.800"}
               className="p-5 rounded-lg flex flex-col items-start"
             >
               <li>RESTful API</li>
