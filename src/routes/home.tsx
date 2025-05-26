@@ -11,6 +11,7 @@ import "./home.css";
 import { Box, Button, Center, Flex, Table } from "@chakra-ui/react";
 import { useColorMode } from "@chakra/components/ui/color-mode";
 import HomeWelcomeMsg from "@components/HomeWelcomeMsg";
+import { Link } from "react-router";
 
 const Home = () => {
   const btn = (value: string) => {
@@ -50,7 +51,7 @@ const Home = () => {
               />
             </Flex>
             <Center paddingY={2}>
-              <a href="/project">
+              <Link to="/projects">
                 <Button
                   size="xl"
                   variant="surface"
@@ -63,7 +64,7 @@ const Home = () => {
                     <MdKeyboardArrowRight size={22} />
                   </div>
                 </Button>
-              </a>
+              </Link>
             </Center>
           </Box>
           <Box>
@@ -104,7 +105,7 @@ const Home = () => {
                     <Table.Cell>
                       <Flex>
                         <Center>
-                          <a href="/works/#boxs">
+                          <Link to="/works">
                             <Button
                               size="xl"
                               variant="surface"
@@ -117,7 +118,7 @@ const Home = () => {
                                 <MdKeyboardArrowRight size={52} />
                               </div>
                             </Button>
-                          </a>
+                          </Link>
                         </Center>
                       </Flex>
                     </Table.Cell>
