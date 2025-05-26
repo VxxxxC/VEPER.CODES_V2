@@ -49,7 +49,7 @@ const WorkLayout = ({
             {TechStack}
           </Box>
         </fieldset>
-        <fieldset className="h-full w-full overflow-x-auto overflow-y-scroll scroll-smooth text-left p-5 rounded-lg border border-zinc-400 dark:border-zinc-700">
+        <fieldset className="h-full w-full overflow-auto scroll-smooth text-left p-5 rounded-lg border border-zinc-400 dark:border-zinc-700">
           <legend className="px-2 text-base font-medium">Duty</legend>
           <Box paddingX={5} display="flex" flexDirection="column" gapY={3}>
             {Duty}
