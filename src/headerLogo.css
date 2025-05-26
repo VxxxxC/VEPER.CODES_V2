@@ -1,7 +1,7 @@
-  .neonText {
-    animation: flicker 1.5s infinite alternate;
-    color: #000000;
-  }
+@import "tailwindcss";
+
+  @theme {
+    --animate-flickering-neon: flicker 1.5s infinite alternate;
 
   /* Flickering animation */
   @keyframes flicker {
@@ -21,4 +21,6 @@
     55% {
       text-shadow: none;
     }
+  }
+
   }

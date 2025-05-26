@@ -19,7 +19,10 @@ export default function Navbar() {
         alignItems="center"
       >
         <Link to="/">
-          <div className="neonText relative" aria-lable="header logo">
+          <div
+            className="animate-flickering-neon relative"
+            aria-lable="header logo"
+          >
             VEPER.CODES
           </div>
         </Link>

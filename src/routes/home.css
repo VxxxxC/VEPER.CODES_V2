@@ -34,3 +34,9 @@
         margin-top: 10px;
         margin-bottom: 10px;
       }
+
+      .currentLearn {
+
+
+          @apply font-black text-lg text-orange-500 border-4 border-teal-400 dark:border-cyan-500;
+      }

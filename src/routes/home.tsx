@@ -181,7 +181,7 @@ const Home = () => {
                 <p>MongoDB</p>
               </Flex>
             </fieldset>
-            <fieldset className="font-black text-lg text-orange-500 border-4 border-teal-400 dark:border-cyan-500">
+            <fieldset className="currentLearn font-black text-lg text-orange-500 border-4 border-teal-400 dark:border-cyan-500">
               <legend>Currently Learning</legend>
               <Flex
                 padding={2}
