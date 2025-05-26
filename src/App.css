@@ -7,6 +7,6 @@
 
 .navbar{
   a {
-      @apply py-1 px-3 text-cyan-600 hover:bg-cyan-300;
+      @apply py-0.5 px-3 hover:underline underline-offset-8;
   }
 }
