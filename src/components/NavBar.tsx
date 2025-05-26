@@ -16,7 +16,13 @@ export default function Navbar() {
         display="flex"
         direction="row"
         justifyContent="center"
+        alignItems="center"
       >
+        <Link to="/">
+          <div className="neonText relative" aria-lable="header logo">
+            VEPER.CODES
+          </div>
+        </Link>
         <Stack
           width="100%"
           p={1}
@@ -31,12 +37,6 @@ export default function Navbar() {
             display={{ base: "none", lg: "inline-flex" }}
             gapX={5}
           >
-            <Link to="/">
-              <div className="neonText relative" aria-lable="header logo">
-                VEPER.CODES
-              </div>
-            </Link>
-
             <Link to="/works"> WORKS </Link>
             <Link to="/projects"> PROJECTS </Link>
           </Box>
