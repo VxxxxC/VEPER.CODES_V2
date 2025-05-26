@@ -22,6 +22,13 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
 
   const { colorMode } = useColorMode();
 
+  // FIXME need to fix the tab will initialized when color theme is changed
+  useEffect(() => {
+    setTimeout(() => {
+      setSelectedTab(tabs[0].id);
+    }, 500);
+  }, [colorMode]);
+
   useEffect(() => {
     if (colorMode == "light") {
       setTextColor("pink.400");
