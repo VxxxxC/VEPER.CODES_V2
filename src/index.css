@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+:root {
+  color-scheme: light dark;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,4 +12,10 @@ body {
   font-family: "Varela Round", --apple-system, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  color: light-dark(
+          oklch(37% 0.013 285.805),
+          oklch(92% 0.004 286.32),
+        );
+  background-color: light-dark(#eee7dc, #18181b);
 }
