@@ -149,7 +149,7 @@ const selector = ({
         );
       case "Feathers.js":
         return (
-          <div className="w-[140px] font-sans rounded-3xl m-2 py-1 gap-2 flex justify-center items-center text-orange-400 bg-white">
+          <div className="w-[140px] font-sans rounded-3xl m-2 py-1 gap-2 flex justify-center items-center text-orange-400 bg-stone-200">
             <GiFeather size={size} color="orange-400" />
             {showName ? name : null}
           </div>
@@ -163,7 +163,7 @@ const selector = ({
         );
       case "NativeScript":
         return (
-          <div className="w-[140px] font-sans rounded-3xl m-2 py-1 gap-2 flex justify-center items-center text-sky-400 bg-stone-50">
+          <div className="w-[140px] font-sans rounded-3xl m-2 py-1 gap-2 flex justify-center items-center text-sky-400 bg-stone-200">
             <SiNativescript size={size} color="sky-400" />
             {showName ? name : null}
           </div>
@@ -198,14 +198,14 @@ const selector = ({
         );
       case "Nuxt":
         return (
-          <div className="w-[140px] font-sans rounded-3xl m-2 py-1 gap-2 flex justify-center items-center text-emerald-400 bg-white">
+          <div className="w-[140px] font-sans rounded-3xl m-2 py-1 gap-2 flex justify-center items-center text-emerald-400 bg-stone-200">
             <SiNuxtdotjs size={size} color="emerald-400" />
             {showName ? name : null}
           </div>
         );
       case "Vue":
         return (
-          <div className="w-[140px] font-sans rounded-3xl m-2 py-1 gap-2 flex justify-center items-center text-emerald-400 bg-white">
+          <div className="w-[140px] font-sans rounded-3xl m-2 py-1 gap-2 flex justify-center items-center text-emerald-400 bg-stone-200">
             <SiVuedotjs size={size} color="emerald-400" />
             {showName ? name : null}
           </div>
