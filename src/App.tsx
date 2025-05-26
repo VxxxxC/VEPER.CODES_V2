@@ -34,7 +34,7 @@ function App() {
           lg={{
             display: "grid",
             gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
-            maxWidth: "100rem",
+            maxWidth: "80rem",
           }}
         >
           <Container
