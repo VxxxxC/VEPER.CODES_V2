@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import ThemeToggle from "@components/ThemeToggle";
 import { Box, IconButton, Menu, Portal, Stack } from "@chakra-ui/react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import "../headerLogo.css";
 
 export default function Navbar() {
   return (
@@ -30,7 +31,12 @@ export default function Navbar() {
             display={{ base: "none", lg: "inline-flex" }}
             gapX={5}
           >
-            <Link to="/"> HOME </Link>
+            <Link to="/">
+              <div className="neonText relative" aria-lable="header logo">
+                VEPER.CODES
+              </div>
+            </Link>
+
             <Link to="/works"> WORKS </Link>
             <Link to="/projects"> PROJECTS </Link>
           </Box>
