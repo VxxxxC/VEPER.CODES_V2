@@ -1,4 +1,6 @@
 import React from "react";
+import "./WorkLayout.css";
+import { useColorMode } from "@chakra/components/ui/color-mode";
 import { Box, Container, Flex } from "@chakra-ui/react";
 import type { tabsPropsType } from "@components/NestedTab";
 import NestedTab from "@components/NestedTab";
@@ -16,6 +18,7 @@ const WorkLayout = ({
   Duty: React.ReactNode;
   Demo: tabsPropsType[];
 }) => {
+  const { colorMode } = useColorMode();
   return (
     <Container id="boxs" className="h-full w-full flex flex-col items-center">
       <Flex direction="row" alignItems="center" gapX={2}>
@@ -23,20 +26,22 @@ const WorkLayout = ({
         <Box
           paddingX={2}
           paddingY={1}
-          className="text-sm font-black dark:bg-slate-500 text-cyan-500 bg-slate-300"
+          className="text-sm font-black "
+          color={colorMode === "light" ? "orange.500" : "orange.100"}
+          bgColor={colorMode === "light" ? "orange.100" : "orange.800"}
         >
           {Duration}
         </Box>
       </Flex>
       <Box
         display="flex"
-        flexDirection={{ base: "column", xl: "row" }}
+        flexDirection={{ base: "column", lg: "row" }}
         justifyContent="center"
         alignContent="center"
         className="h-3/5 mobile:h-3/4"
         gap={2}
       >
-        <fieldset className="w-full flex flex-col items-center justify-center text-left p-5 rounded-lg border border-zinc-400 dark:border-zinc-700">
+        <fieldset className="w-full flex flex-col items-center justify-center text-left p-5 rounded-lg">
           <legend className="px-2 text-base font-medium">
             Tech Stack and Framework
           </legend>
@@ -49,7 +54,7 @@ const WorkLayout = ({
             {TechStack}
           </Box>
         </fieldset>
-        <fieldset className="h-full w-full overflow-auto scroll-smooth text-left p-5 rounded-lg border border-zinc-400 dark:border-zinc-700">
+        <fieldset className="h-full w-full overflow-auto scroll-smooth text-left p-5 rounded-lg">
           <legend className="px-2 text-base font-medium">Duty</legend>
           <Box paddingX={5} display="flex" flexDirection="column" gapY={3}>
             {Duty}
@@ -58,7 +63,7 @@ const WorkLayout = ({
       </Box>
 
       <Box>
-        <fieldset className=" text-left px-5 rounded-lg border border-zinc-400 dark:border-zinc-700">
+        <fieldset className=" text-left px-5 rounded-lg">
           <legend className="px-2 text-base font-medium">Demo</legend>
           <NestedTab tabs={Demo} />
         </fieldset>
