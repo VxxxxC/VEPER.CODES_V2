@@ -5,7 +5,6 @@ import Home from "@routes/home";
 import Works from "@routes/works";
 import Projects from "@routes/projects";
 import { Box, Container } from "@chakra-ui/react";
-import { useColorModeValue } from "@chakra/components/ui/color-mode";
 
 function App() {
   return (
@@ -14,11 +13,6 @@ function App() {
         className="App-Container"
         width="full"
         height="full"
-        bg={useColorModeValue("gray.150", "gray.900")}
-        color={useColorModeValue(
-          "oklch(37% 0.013 285.805)",
-          "oklch(92% 0.004 286.32)",
-        )}
         transition="0.8s ease-in-out"
         display="flex"
         flexDirection="column"
