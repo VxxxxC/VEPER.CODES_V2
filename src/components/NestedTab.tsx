@@ -1,4 +1,4 @@
-import { Box, Flex, Tabs } from "@chakra-ui/react";
+import { Box, Container, Flex, Tabs } from "@chakra-ui/react";
 import {
   useColorMode,
   useColorModeValue,
@@ -35,32 +35,34 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
   return (
     <>
       <MotionDiv>
-        <Tabs.Root
-          value={selectedTab}
-          variant="plain"
-          size="sm"
-          orientation="vertical"
-          onValueChange={(e) => setSelectedTab(e.value)}
-        >
-          <Flex
-            justify="start"
-            bg={useColorModeValue("gray.100", "gray.800")}
-            rounded="lg"
+        <Container>
+          <Tabs.Root
+            value={selectedTab}
+            variant="plain"
+            size="sm"
+            orientation="vertical"
+            onValueChange={(e) => setSelectedTab(e.value)}
           >
-            {tabs.map(({ id, label }: tabsPropsType) => (
-              <Tabs.List rounded="md" padding={1}>
-                <Tabs.Trigger
-                  key={id}
-                  value={id}
-                  color={textColor}
-                  bg={selectedTab === id ? bgColor : ""}
-                >
-                  {label}
-                </Tabs.Trigger>
-              </Tabs.List>
-            ))}
-          </Flex>
-        </Tabs.Root>
+            <Flex
+              justify="start"
+              bg={useColorModeValue("gray.100", "gray.800")}
+              rounded="lg"
+            >
+              {tabs.map(({ id, label }: tabsPropsType) => (
+                <Tabs.List rounded="md" padding={1}>
+                  <Tabs.Trigger
+                    key={id}
+                    value={id}
+                    color={textColor}
+                    bg={selectedTab === id ? bgColor : ""}
+                  >
+                    {label}
+                  </Tabs.Trigger>
+                </Tabs.List>
+              ))}
+            </Flex>
+          </Tabs.Root>
+        </Container>
 
         <Tabs.Root
           value={selectedTab}
