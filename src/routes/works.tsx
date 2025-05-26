@@ -1,7 +1,8 @@
-import Boxs from "./boxs/boxs.tsx";
+import Boxs from "./works/boxs/boxs.tsx";
 import type { tabsPropsType } from "@components/NestedTab";
 import { v4 as uuidv4 } from "uuid";
 import NestedTab from "@components/NestedTab";
+import { Box } from "@chakra-ui/react";
 
 export default function Works() {
   const works: tabsPropsType[] = [
@@ -9,7 +10,9 @@ export default function Works() {
   ];
   return (
     <>
-      <NestedTab tabs={works} />
+      <Box marginTop={10}>
+        <NestedTab tabs={works} />
+      </Box>
     </>
   );
 }
