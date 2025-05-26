@@ -71,7 +71,7 @@ const Home = () => {
                 <div className="mb-2 h-1 bg-gray-600"></div>
               </h1>
             </Box>
-            <Box className="overflow-x-scroll">
+            <Box className="overflow-x-auto">
               {/* FIXME NEED TO FIX FOR THE TABLE WIDTH  */}
               <Table.Root
                 color={colorMode === "light" ? "pink.600" : "pink.300"}
