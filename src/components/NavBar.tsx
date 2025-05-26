@@ -5,17 +5,24 @@ import { Box, Flex } from "@chakra-ui/react";
 export default function Navbar() {
   return (
     <>
-      <Flex direction="row" justifyContent="center">
+      <Flex
+        position="sticky"
+        top={0}
+        zIndex={10}
+        backdropFilter="blur(10px)"
+        width="100%"
+        direction="row"
+        justifyContent="center"
+      >
         <Box
           width="100%"
-          paddingY={3}
-          paddingX={5}
+          p={1}
           display="flex"
           flexDirection="row"
           justifyContent="space-between"
           alignItems="center"
         >
-          <Flex className="navbar" direction="row" gapX={1}>
+          <Flex className="navbar" direction="row" gapX={5}>
             <Link to="/"> HOME </Link>
             <Link to="/works"> WORKS </Link>
             <Link to="/projects"> PROJECTS </Link>

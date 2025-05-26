@@ -32,10 +32,10 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
   useEffect(() => {
     if (colorMode == "light") {
       setTextColor("pink.400");
-      setBgColor("gray.900");
+      setBgColor("gray.600");
     } else {
-      setTextColor("cyan.400");
-      setBgColor("gray.500");
+      setTextColor("pink.500");
+      setBgColor("gray.700");
     }
   }, [colorMode]);
 
@@ -56,7 +56,7 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
               rounded="lg"
             >
               {tabs.map(({ id, label }: tabsPropsType) => (
-                <Tabs.List rounded="md" padding={1}>
+                <Tabs.List rounded="md" padding={1.5}>
                   <Tabs.Trigger
                     key={id}
                     value={id}
