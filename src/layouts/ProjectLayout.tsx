@@ -1,3 +1,4 @@
+import { Box, Container, Flex, Image } from "@chakra-ui/react";
 import Selector from "@components/TechIcons";
 import { SiAndroid, SiIos } from "react-icons/si";
 
@@ -25,24 +26,44 @@ export type projectPropsType =
 const ProjectLayout = ({ props }: { props: projectPropsType }) => {
   return (
     <>
-      <main className="w-[450px] mobile:w-[100%] mobile:flex mobile:flex-col">
-        <div
+      <Container
+        width="100%"
+        base={{ display: "flex", flexDirection: "column" }}
+        lg={{ display: "block", textAlign: "center" }}
+      >
+        <Box
+          paddingY={2}
+          id="title"
+          textAlign="left"
+          fontSize="2xl"
+          fontWeight="black"
+          fontStyle="italic"
+          textDecoration="underline"
+          textUnderlineOffset="8px"
+          textDecorationThickness="2px"
+        >
+          {props.title}
+        </Box>
+
+        <Flex
+          direction={{ base: "column", lg: "row" }}
+          alignItems={{ base: "center" }}
+          gapY={{ base: 5 }}
+          gapX={{ lg: 5 }}
           id="imageContainer"
-          className="mobile:flex-col mobile:items-center flex justify-center"
         >
           {props.img.map((item) => {
             return (
-              <img
+              <Image
                 id="image"
-                className="my-4 rounded-lg hover:object-scale-down object-contain h-[720px] w-[400px]"
                 src={item}
+                width="400px"
+                height="620px"
+                fit="contain"
               />
             );
           })}
-        </div>
-        <div id="title" className="my-4 text-2xl">
-          {props.title}
-        </div>
+        </Flex>
 
         <div className="flex flex-col items-start">
           {props.platform && props.mobile ? (
@@ -91,7 +112,7 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
             return <Selector props={item} />;
           })}
         </div>
-      </main>
+      </Container>
     </>
   );
 };
