@@ -22,7 +22,7 @@ export type projectPropsType =
       mobile: mobileType;
     };
 
-const ProjectLayout = (props: projectPropsType) => {
+const ProjectLayout = ({ props }: { props: projectPropsType }) => {
   return (
     <>
       <main className="w-[450px] mobile:w-[100%] mobile:flex mobile:flex-col">
