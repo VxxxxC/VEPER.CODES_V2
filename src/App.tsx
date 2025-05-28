@@ -13,7 +13,6 @@ function App() {
         className="App-Container"
         width="full"
         height="full"
-        transition="0.8s ease-in-out"
         display="flex"
         flexDirection="column"
         alignItems="center"

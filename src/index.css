@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap");
 
 :root {
   color-scheme: light dark;
@@ -9,7 +10,7 @@ html {
 }
 
 body {
-  font-family: "Varela Round", --apple-system, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Varela Round", "Roboto", --apple-system, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -18,4 +19,5 @@ body {
           oklch(92% 0.004 286.32),
         );
   background-color: light-dark(#eee7dc, #18181b);
+  transition: all 0.5s ease-in-out;
 }
