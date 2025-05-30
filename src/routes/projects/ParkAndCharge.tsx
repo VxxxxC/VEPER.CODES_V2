@@ -31,6 +31,8 @@ const ParkAndCharge = () => {
     desc,
     feat: features,
     techIcons,
+    platform: true,
+    mobile: "iOS",
   };
 
   return (
