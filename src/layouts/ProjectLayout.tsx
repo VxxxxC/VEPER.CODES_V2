@@ -1,8 +1,11 @@
-import { Box, Container, Flex, Image } from "@chakra-ui/react";
+import { Box, Container, Flex, Icon } from "@chakra-ui/react";
+import SkeletonLoad from "@components/skeletonLoading";
 import Selector from "@components/TechIcons";
+import { Suspense } from "react";
 import { SiAndroid, SiIos } from "react-icons/si";
+import { lazy } from "react";
 
-export type mobileType = "iOS" | "Android";
+export type mobileType = "iOS" | "Android" | "Duo";
 
 export type projectPropsType =
   | {
@@ -21,7 +24,10 @@ export type projectPropsType =
       techIcons: string[];
       platform: true;
       mobile: mobileType;
+      link?: string;
     };
+
+const LazyContentImage = lazy(() => import("./ProjectContentImage.tsx"));
 
 const ProjectLayout = ({ props }: { props: projectPropsType }) => {
   return (
@@ -34,9 +40,8 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
         <Box
           paddingY={2}
           id="title"
+          textStyle="header"
           textAlign="left"
-          fontSize="2xl"
-          fontWeight="black"
           fontStyle="italic"
           textDecoration="underline"
           textUnderlineOffset="8px"
@@ -54,64 +59,124 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
         >
           {props.img.map((item) => {
             return (
-              <Image
-                id="image"
-                src={item}
-                width="400px"
-                height="620px"
-                fit="contain"
-              />
+              <Suspense fallback={<SkeletonLoad />}>
+                <LazyContentImage image={item} />
+              </Suspense>
             );
           })}
         </Flex>
 
-        <div className="flex flex-col items-start">
-          {props.platform && props.mobile ? (
-            <div className="flex items-center">
-              <div className="border border-amber-300 dark:border-amber-800 px-2 font-bold text-amber-300 bg-amber-700 dark:text-amber-700 dark:bg-amber-300">
-                Platform
-              </div>
-              <a
-                className="mx-2 p-2 rounded-full bg-white text-black hover:bg-black hover:text-white duration-700"
-                href="https://apps.apple.com/app/id1659625087"
-                target="_blank"
-              >
-                {props.mobile === "iOS" ? (
-                  <SiIos size={30} />
-                ) : (
-                  <SiAndroid size={30} />
-                )}
-              </a>
-            </div>
-          ) : null}{" "}
-          <div className="flex my-4 gap-2 justify-evenly items-center">
-            <div className="border border-teal-400 px-1 text-teal-300 bg-teal-800 dark:text-teal-800 dark:bg-teal-300">
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="start"
+          gapY={10}
+          marginY={10}
+        >
+          <Box display="block" spaceY={2}>
+            {props.platform && props.mobile ? (
+              <>
+                <Box
+                  width="max-content"
+                  rounded="sm"
+                  paddingX={2}
+                  className="border border-amber-300 dark:border-amber-800 px-2 font-bold text-amber-300 bg-amber-700 dark:text-amber-700 dark:bg-amber-300"
+                >
+                  Platform
+                </Box>
+
+                <Box width="max-content" display="flex">
+                  {props.mobile === "iOS" ? (
+                    <Icon
+                      className="rounded-full bg-white text-black"
+                      p={1}
+                      size="2xl"
+                      color="gray.800"
+                    >
+                      <SiIos />
+                    </Icon>
+                  ) : props.mobile === "Android" ? (
+                    <Icon
+                      className="rounded-full bg-white text-black"
+                      p={1}
+                      size="2xl"
+                      color="gray.800"
+                    >
+                      <SiAndroid size={30} />
+                    </Icon>
+                  ) : (
+                    <Box display="flex" direction="row" gapX={2}>
+                      <Icon
+                        className="rounded-full bg-white text-black"
+                        p={1}
+                        size="2xl"
+                        color="gray.800"
+                      >
+                        <SiIos />
+                      </Icon>
+                      <Icon
+                        className="rounded-full bg-white text-black"
+                        p={1}
+                        size="2xl"
+                        color="gray.800"
+                      >
+                        <SiAndroid size={30} />
+                      </Icon>
+                    </Box>
+                  )}
+                </Box>
+              </>
+            ) : null}
+          </Box>
+          <Box display="block" spaceY={2}>
+            <Box
+              width="max-content"
+              paddingX={2}
+              rounded="sm"
+              className="border border-teal-400 px-1 text-teal-300 bg-teal-800 dark:text-teal-800 dark:bg-teal-300"
+            >
               Desc
-            </div>
+            </Box>
             <div id="desc" className="text-sm font-sans">
               {props.desc}
             </div>
-          </div>
-          <div className="flex my-4 gap-2 justify-evenly items-center">
-            <div className="border border-sky-400 px-1 text-cyan-300 bg-sky-800 dark:text-cyan-800 dark:bg-sky-300">
-              Feat
-            </div>
-            <div
-              id="features"
-              className="p-4 flex flex-wrap gap-4 text-sm font-sans"
+          </Box>
+          <Box width="full" className="flex my-4 gap-x-10 items-center">
+            <fieldset className="h-full w-full overflow-auto scroll-smooth text-left p-5 rounded-lg">
+              <legend className="px-2 text-base font-medium">Features</legend>
+              <Box
+                textStyle="body"
+                paddingX={5}
+                display="flex"
+                flexDirection="column"
+                gapY={3}
+              >
+                {props.feat.map((item) => {
+                  return <li>{item}</li>;
+                })}
+              </Box>
+            </fieldset>
+          </Box>
+          <fieldset className="w-full flex flex-col items-center justify-center text-left p-5 rounded-lg">
+            <legend className="px-2 text-base font-medium">
+              Tech Stack and Framework
+            </legend>
+            <Box
+              textStyle="body"
+              padding={1}
+              display="grid"
+              gridTemplateColumns={{
+                base: "repeat(1,1fr)",
+                lg: "repeat(2,1fr)",
+              }}
+              gap={5}
             >
-              {props.feat.map((item) => {
-                return <li>{item}</li>;
+              {props.techIcons.map((item) => {
+                return <Selector props={item} />;
               })}
-            </div>
-          </div>
-        </div>
-
-        <div id="stack" className="flex flex-wrap justify-around py-8 text-sm">
-          {props.techIcons.map((item) => {
-            return <Selector props={item} />;
-          })}
-        </div>
+            </Box>
+          </fieldset>
+        </Box>
       </Container>
     </>
   );
