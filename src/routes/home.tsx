@@ -41,9 +41,9 @@ const Home = () => {
             >
               <div className="inline-flex flex-col items-center justify-center whitespace-nowrap">
                 <div className="my-2 text-4xl font-bold">Veper Ho</div>
-                <div className="my-2 text-sm">
+                <Box className="my-2 text-sm">
                   Codes / Subcultures / Indie Music
-                </div>
+                </Box>
               </div>
               <img
                 className="w-60 h-60 border border-opacity-10 border-white rounded-3xl object-cover"
@@ -69,12 +69,12 @@ const Home = () => {
           </Box>
           <Box>
             <Box paddingY={5} className="flex flex-col items-start">
-              <h1 className="text-xl font-black mt-10">
+              <Box textStyle="header" className="text-xl font-black mt-10">
                 Bio
                 <div className="mb-2 h-1 bg-gray-600"></div>
-              </h1>
+              </Box>
             </Box>
-            <Box className="overflow-x-auto">
+            <Box textStyle="body" className="overflow-x-auto">
               {/* FIXME NEED TO FIX FOR THE TABLE WIDTH  */}
               <Table.Root
                 color={colorMode === "light" ? "pink.600" : "pink.300"}
@@ -130,12 +130,13 @@ const Home = () => {
 
           <Box>
             <Box paddingY={5} className="flex flex-col items-start">
-              <h1 className="text-xl font-black mt-10">
+              <Box textStyle="header" className="text-xl font-black mt-10">
                 Tech I Use
                 <div className="mb-2 h-1 bg-gray-600"></div>
-              </h1>
+              </Box>
             </Box>
             <Box
+              textStyle="body"
               padding={5}
               bg={colorMode === "light" ? "gray.300" : "gray.800"}
               className="p-5 rounded-lg flex flex-col items-start"
@@ -151,6 +152,7 @@ const Home = () => {
             <fieldset className="border border-zinc-500">
               <legend>Frontend</legend>
               <Flex
+                textStyle="body"
                 padding={2}
                 direction={{ base: "column" }}
                 justifyContent={{ base: "start" }}
@@ -169,6 +171,7 @@ const Home = () => {
             <fieldset className="border border-zinc-500">
               <legend>Backend</legend>
               <Flex
+                textStyle="body"
                 padding={2}
                 direction={{ base: "column" }}
                 justifyContent={{ base: "start" }}
@@ -199,10 +202,10 @@ const Home = () => {
 
           <Box>
             <Box paddingY={5} className="flex flex-col items-start">
-              <h1 className="text-xl font-black mt-10">
+              <Box textStyle="header" className="text-xl font-black mt-10">
                 <IoHeartOutline size={30} />
                 <div className="mb-2 h-1 bg-gray-600"></div>
-              </h1>
+              </Box>
             </Box>
             <Box className="text-md font-bold my-2 flex flex-col items-start">
               <p>indie music</p>
@@ -214,10 +217,10 @@ const Home = () => {
 
           <Box>
             <Box paddingY={5} className="flex flex-col items-start">
-              <h1 className="text-xl font-black mt-10">
+              <Box textStyle="header" className="text-xl font-black mt-10">
                 Connect
                 <div className="h-1 bg-gray-600"></div>
-              </h1>
+              </Box>
             </Box>
             <Box className="flex flex-col items-start">
               <a
