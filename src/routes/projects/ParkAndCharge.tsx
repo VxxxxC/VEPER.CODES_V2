@@ -1,3 +1,4 @@
+import type { SelectorProps } from "@components/TechIcons";
 import type { projectPropsType } from "@layouts/ProjectLayout";
 import ProjectLayout from "@layouts/ProjectLayout";
 
@@ -15,7 +16,7 @@ const ParkAndCharge = () => {
     "Real-time update parking slot vacancy",
     "Animated Zoom-in",
   ];
-  const techIcons = [
+  const techIcons: SelectorProps[] = [
     "Typescript",
     "React Native",
     "Redux",
