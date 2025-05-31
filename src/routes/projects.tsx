@@ -43,9 +43,20 @@ export default function Projects() {
       >
         {projects.map((item, index) => (
           <Accordion.Item key={index} value={item.value}>
+            {index === 0 ? (
+              <>
+                <Text textStyle="header">Personal</Text>
+                <Box height="2px" width="full" bgColor="cyan.500" />
+              </>
+            ) : index === 1 ? (
+              <>
+                <Text textStyle="header">Academy</Text>
+                <Box height="2px" width="full" bgColor="cyan.500" />
+              </>
+            ) : null}
             <Accordion.ItemTrigger>
               <Box display="flex" width="full" justifyContent="space-between">
-                <Text textStyle="header">{item.label}</Text>
+                <Text>{item.label}</Text>
                 <Box>
                   <Icon size="sm">
                     <FaAngleDown />
@@ -53,7 +64,6 @@ export default function Projects() {
                 </Box>
               </Box>
             </Accordion.ItemTrigger>
-
             <Accordion.ItemContent>
               <Accordion.ItemBody>
                 <Center>{item.content}</Center>
