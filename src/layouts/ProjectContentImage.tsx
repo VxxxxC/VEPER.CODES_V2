@@ -5,8 +5,8 @@ const ProjectContentImage = (props: { image: string }) => {
       <Image
         id="image"
         src={props.image}
-        width="400px"
-        height="620px"
+        maxHeight="40rem"
+        maxWidth="32rem"
         fit="contain"
       />
     </>
