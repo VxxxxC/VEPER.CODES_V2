@@ -9,11 +9,24 @@ import {
   createSystem,
   defaultConfig,
   defineConfig,
-  defaultSystem,
   defineTextStyles,
 } from "@chakra-ui/react";
 
 const textStyles = defineTextStyles({
+  mobile: {
+    value: {
+      fontFamily: "Varela Round",
+      fontWeight: "400",
+      fontSize: "14px",
+    },
+  },
+  normal: {
+    value: {
+      fontFamily: "Varela Round",
+      fontWeight: "400",
+      fontSize: "16px",
+    },
+  },
   header: {
     value: {
       fontFamily: "Varela Round",
