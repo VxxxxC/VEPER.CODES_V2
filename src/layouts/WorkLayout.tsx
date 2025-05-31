@@ -71,7 +71,7 @@ const WorkLayout = ({
         </fieldset>
       </Box>
 
-      <Box>
+      <Box width="full">
         <fieldset className=" text-left px-5 rounded-lg">
           <legend className="px-2 text-base font-medium">Demo</legend>
           <NestedTab tabs={Demo} />
