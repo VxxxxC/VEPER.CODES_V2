@@ -8,7 +8,14 @@ import {
 } from "react-icons/io5";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "./home.css";
-import { Box, Button, Center, Flex, Table } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  Table,
+  Link as ChakraLink,
+} from "@chakra-ui/react";
 import { useColorMode } from "@chakra/components/ui/color-mode";
 import HomeWelcomeMsg from "@components/HomeWelcomeMsg";
 import { Link } from "react-router";
@@ -223,31 +230,58 @@ const Home = () => {
               </Box>
             </Box>
             <Box className="flex flex-col items-start">
-              <a
-                className="py-2 px-8 flex justify-center items-center gap-4 rounded-xl font-vr font-bold text-cyan-900 hover:bg-teal-400 dark:text-teal-400 dark:hover:bg-cyan-900"
+              <ChakraLink
                 href="https://github.com/vxxxxc"
                 target="_blank"
+                display="flex"
+                flexDirection="row"
+                justifyContent="center"
+                alignItems="center"
+                rounded="lg"
+                p={2}
+                _hover={{
+                  bg: colorMode === "light" ? "teal.400" : "cyan.900",
+                }}
+                color={colorMode === "light" ? "cyan.900" : "teal.400"}
               >
                 <IoLogoGithub size={30} />
                 GitHub
-              </a>
-              <a
-                className="py-2 px-8 flex justify-center items-center gap-4 rounded-xl font-vr font-bold text-cyan-900 hover:bg-teal-400 dark:text-teal-400 dark:hover:bg-cyan-900"
+              </ChakraLink>
+              <ChakraLink
                 href="https://www.instagram.com/vepercodes/"
                 target="_blank"
+                display="flex"
+                flexDirection="row"
+                justifyContent="center"
+                alignItems="center"
+                rounded="lg"
+                p={2}
+                _hover={{
+                  bg: colorMode === "light" ? "teal.400" : "cyan.900",
+                }}
+                color={colorMode === "light" ? "cyan.900" : "teal.400"}
               >
                 <IoLogoInstagram size={30} />
                 Instagram
-              </a>
+              </ChakraLink>
 
-              <a
-                className="py-2 px-8 flex justify-center items-center gap-4 rounded-xl font-vr font-bold text-cyan-900 hover:bg-teal-400 dark:text-teal-400 dark:hover:bg-cyan-900"
+              <ChakraLink
                 href="https://www.linkedin.com/in/veper-ho/"
                 target="_blank"
+                display="flex"
+                flexDirection="row"
+                justifyContent="center"
+                alignItems="center"
+                rounded="lg"
+                p={2}
+                _hover={{
+                  bg: colorMode === "light" ? "teal.400" : "cyan.900",
+                }}
+                color={colorMode === "light" ? "cyan.900" : "teal.400"}
               >
                 <IoLogoLinkedin size={30} />
                 LinkedIn
-              </a>
+              </ChakraLink>
             </Box>
           </Box>
         </Box>

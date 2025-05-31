@@ -20,7 +20,7 @@ const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
           <Accordion.Item key={index} value={item.title}>
             <Accordion.ItemTrigger>
               <Box display="flex" width="full" justifyContent="space-between">
-                <Text textStyle="header">{item.title}</Text>
+                <Text>{item.title}</Text>
                 <Box>
                   <Icon size="sm">
                     <FaAngleDown />

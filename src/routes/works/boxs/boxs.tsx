@@ -61,7 +61,7 @@ const Boxs = () => {
     <>
       <WorkLayout
         Name="BOXS - Frontend Developer"
-        Duration="2024 - 2025"
+        Duration="FEB2023 - OCT2024"
         TechStack={<BoxsTechStack />}
         Duty={<BoxsDuty />}
         Demo={BoxsDemo}
