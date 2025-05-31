@@ -30,6 +30,7 @@ const WorkLayout = ({
           className="text-sm font-black "
           color={colorMode === "light" ? "orange.500" : "orange.100"}
           bgColor={colorMode === "light" ? "orange.100" : "orange.800"}
+          whiteSpace="nowrap"
         >
           {Duration}
         </Box>
