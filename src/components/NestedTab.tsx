@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Tabs } from "@chakra-ui/react";
+import { Box, Container, Flex, Tabs, Text } from "@chakra-ui/react";
 import {
   useColorMode,
   useColorModeValue,
@@ -7,14 +7,14 @@ import { useEffect, useState } from "react";
 import MotionDiv from "./MotionDiv";
 
 export type tabsPropsType = {
-  id: string;
+  value: string;
   label: string;
   content: React.ReactNode;
 };
 
 const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
-  const [selectedTab, setSelectedTab] = useState<tabsPropsType["id"]>(
-    tabs[0].id,
+  const [selectedTab, setSelectedTab] = useState<tabsPropsType["value"]>(
+    tabs[0].value,
   );
 
   const [textColor, setTextColor] = useState<string>("");
@@ -48,15 +48,21 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
               bg={useColorModeValue("gray.100", "gray.800")}
               rounded="lg"
             >
-              {tabs.map(({ id, label }: tabsPropsType) => (
-                <Tabs.List rounded="md" padding={1.5}>
+              {tabs.map(({ value, label }: tabsPropsType) => (
+                <Tabs.List
+                  rounded="md"
+                  padding={1.5}
+                  display="flex"
+                  justifyContent="center"
+                >
                   <Tabs.Trigger
-                    key={id}
-                    value={id}
+                    height="min-content"
+                    key={value}
+                    value={value}
                     color={textColor}
-                    bg={selectedTab === id ? bgColor : ""}
+                    bg={selectedTab === value ? bgColor : ""}
                   >
-                    {label}
+                    <Text>{label}</Text>
                   </Tabs.Trigger>
                 </Tabs.List>
               ))}
@@ -71,10 +77,10 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
           orientation="horizontal"
           onValueChange={(e) => setSelectedTab(e.value)}
         >
-          {tabs.map(({ id, content }: tabsPropsType) => (
+          {tabs.map(({ value, content }: tabsPropsType) => (
             <div>
               <Box>
-                <Tabs.Content value={id}>{content}</Tabs.Content>
+                <Tabs.Content value={value}>{content}</Tabs.Content>
               </Box>
             </div>
           ))}

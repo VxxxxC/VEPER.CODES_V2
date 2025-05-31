@@ -6,11 +6,12 @@ import UniPiece from "@routes/projects/UniPiece";
 import BrailleAi from "@routes/projects/BrailleAi";
 import VirtualMemories from "@routes/projects/VirtualMemories";
 import { useState } from "react";
+import type { tabsPropsType } from "@components/NestedTab";
 
 export default function Projects() {
   const { colorMode } = useColorMode();
 
-  const projects = [
+  const projects: tabsPropsType[] = [
     {
       value: "ParkAndCharge",
       label: "Park And Charge",
@@ -29,7 +30,7 @@ export default function Projects() {
     },
   ];
 
-  const [project, setProject] = useState<string[]>(["ParkAndCharge"]);
+  const [project, setProject] = useState<string[]>([projects[0].value]);
 
   return (
     <>
@@ -61,18 +62,6 @@ export default function Projects() {
           </Accordion.Item>
         ))}
       </Accordion.Root>
-      {/* <Box marginY={5}>
-        <ParkAndCharge />
-        <Box marginY={10} height="1px" bg="gray.600" />
-        <Text textStyle="header">Academy</Text>
-        <Box
-          paddingY={2}
-          bg={colorMode === "light" ? "gray.200" : "gray.800"}
-          rounded="md"
-        >
-          <VirtualMemories />
-        </Box>
-      </Box> */}
     </>
   );
 }

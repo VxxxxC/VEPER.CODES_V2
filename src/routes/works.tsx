@@ -6,7 +6,7 @@ import { Box } from "@chakra-ui/react";
 
 export default function Works() {
   const works: tabsPropsType[] = [
-    { id: uuidv4(), label: "Boxs", content: <Boxs /> },
+    { value: "Boxs", label: "Boxs", content: <Boxs /> },
   ];
   return (
     <>

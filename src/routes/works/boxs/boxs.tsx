@@ -8,17 +8,17 @@ import WorkLayout from "@layouts/WorkLayout";
 
 export const BoxsDemo: tabsPropsType[] = [
   {
-    id: uuidv4(),
+    value: "RevampUi",
     label: "Revamp - UI",
     content: <Revamp />,
   },
   {
-    id: uuidv4(),
+    value: "RevampMobileUi",
     label: "Revamp - Mobile UI",
     content: <RevampMobile />,
   },
   {
-    id: uuidv4(),
+    value: "NewFeature",
     label: "New Features",
     content: <NewFeature />,
   },
