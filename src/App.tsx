@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router";
 import "./App.css";
 import Navbar from "@components/NavBar.tsx";
+import Footer from "./Footer.tsx";
 import Home from "@routes/home";
 import Works from "@routes/works";
 import Projects from "@routes/projects";
@@ -16,6 +17,7 @@ function App() {
         display="flex"
         flexDirection="column"
         alignItems="center"
+        textStyle={{ base: "mobile", lg: "normal" }}
       >
         <Box
           className="OuterBox"
@@ -33,6 +35,7 @@ function App() {
         >
           <Container
             className="InnerBox"
+            paddingY={5}
             width="full"
             lg={{ gridColumnStart: 2, gridColumnEnd: 5 }}
           >
@@ -44,6 +47,7 @@ function App() {
                 <Route path="projects" element={<Projects />} />
               </Routes>
             </div>
+            <Footer />
           </Container>
         </Box>
       </Box>

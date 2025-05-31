@@ -1,0 +1,27 @@
+  .icon-name {
+    --bg-size: 400%;
+    --color-one: hsl(0 90% 55%);
+    --color-two: hsl(255 95% 55%);
+    background: linear-gradient(
+        90deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one)
+      )
+      0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 8s infinite linear;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .icon-name {
+      animation: move-bg 12s linear infinite;
+    }
+    @keyframes move-bg {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
+  }
