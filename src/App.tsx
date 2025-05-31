@@ -12,8 +12,7 @@ function App() {
     <>
       <Box
         className="App-Container"
-        width="full"
-        height="full"
+        position="relative"
         display="flex"
         flexDirection="column"
         alignItems="center"
@@ -21,7 +20,7 @@ function App() {
       >
         <Box
           className="OuterBox"
-          width="full"
+          minHeight="100vh"
           base={{
             display: "flex",
             flexDir: "column",
@@ -36,17 +35,16 @@ function App() {
           <Container
             className="InnerBox"
             paddingY={5}
-            width="full"
             lg={{ gridColumnStart: 2, gridColumnEnd: 5 }}
           >
             <Navbar />
-            <div className="App">
+            <Box marginY={10} className="App">
               <Routes>
                 <Route index element={<Home />} />
                 <Route path="works" element={<Works />} />
                 <Route path="projects" element={<Projects />} />
               </Routes>
-            </div>
+            </Box>
             <Footer />
           </Container>
         </Box>

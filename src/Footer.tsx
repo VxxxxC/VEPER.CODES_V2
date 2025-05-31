@@ -1,4 +1,4 @@
-import { Center, Text } from "@chakra-ui/react";
+import { Box, Center, Text } from "@chakra-ui/react";
 import "./Footer.css";
 
 const Footer = () => {
@@ -6,14 +6,14 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="relateive bottom-0 w-full">
+      <Box position="absolute" zIndex={10} bottom={0} width="full">
         <Center>
-          <Text textStyle={{ base: "mobile", lg: "normal" }}>
+          <Text textStyle="header">
             &copy; {today.getFullYear()}
             <span className="icon-name">VEPER.CODES</span> All rights reserved.
           </Text>
         </Center>
-      </footer>
+      </Box>
     </>
   );
 };
