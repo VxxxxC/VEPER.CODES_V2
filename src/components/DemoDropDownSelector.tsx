@@ -5,9 +5,7 @@ import { FaAngleDown } from "react-icons/fa6";
 export type DemoDropdownType = { title: string; content: string };
 
 const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
-  console.log({ props });
-
-  const [dropdown, setDropdown] = useState<string[]>(["hihi"]);
+  const [dropdown, setDropdown] = useState<string[]>([props[0].title]);
 
   return (
     <>
