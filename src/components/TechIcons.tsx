@@ -27,12 +27,41 @@ import {
 } from "react-icons/si";
 import { GiFeather } from "react-icons/gi";
 
+export type SelectorProps =
+  | "HTML"
+  | "CSS"
+  | "Javascript"
+  | "Nodejs"
+  | "Typescript"
+  | "Express"
+  | "MongoDB"
+  | "PostgreSQL"
+  | "React"
+  | "React Native"
+  | "Redux"
+  | "Tailwindcss"
+  | "Python"
+  | "Tensorflow"
+  | "AWS"
+  | "EC2"
+  | "S3"
+  | "Route53"
+  | "Feathers.js"
+  | "Rust"
+  | "NativeScript"
+  | "Dart"
+  | "Flutter"
+  | "Solidity"
+  | "Blender"
+  | "Nuxt"
+  | "Vue";
+
 const selector = ({
   props,
   size = 18,
   showName = true,
 }: {
-  props: string;
+  props: SelectorProps;
   size?: number;
   showName?: boolean;
 }) => {
