@@ -39,7 +39,7 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
           base={{ display: "flex", flexDirection: "column" }}
           lg={{ display: "block", textAlign: "center" }}
         >
-          <Box
+          {/* <Box
             marginY={2}
             id="title"
             textStyle="body"
@@ -49,8 +49,7 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
             textDecorationThickness="1px"
           >
             {props.title}
-          </Box>
-
+          </Box> */}
           <Flex
             direction={{ base: "column", lg: "row" }}
             justifyContent="start"
