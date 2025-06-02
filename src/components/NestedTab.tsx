@@ -50,6 +50,7 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
             >
               {tabs.map(({ value, label }: tabsPropsType) => (
                 <Tabs.List
+                  key={value}
                   rounded="md"
                   padding={1.5}
                   display="flex"
@@ -78,7 +79,7 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
           onValueChange={(e) => setSelectedTab(e.value)}
         >
           {tabs.map(({ value, content }: tabsPropsType) => (
-            <div>
+            <div key={value}>
               <Box>
                 <Tabs.Content value={value}>{content}</Tabs.Content>
               </Box>

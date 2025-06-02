@@ -57,9 +57,9 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
             gapX={{ lg: 5 }}
             id="imageContainer"
           >
-            {props.img.map((item) => {
+            {props.img.map((item, index) => {
               return (
-                <Suspense fallback={<SkeletonLoad />}>
+                <Suspense key={index} fallback={<SkeletonLoad />}>
                   <LazyContentImage image={item} />
                 </Suspense>
               );
@@ -151,8 +151,8 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
                   flexDirection="column"
                   gapY={3}
                 >
-                  {props.feat.map((item) => {
-                    return <li>{item}</li>;
+                  {props.feat.map((item, index) => {
+                    return <li key={index}>{item}</li>;
                   })}
                 </Box>
               </fieldset>
@@ -171,8 +171,8 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
                 }}
                 gap={5}
               >
-                {props.techIcons.map((item) => {
-                  return <Selector props={item as SelectorProps} />;
+                {props.techIcons.map((item, index) => {
+                  return <Selector key={index} props={item as SelectorProps} />;
                 })}
               </Box>
             </fieldset>
