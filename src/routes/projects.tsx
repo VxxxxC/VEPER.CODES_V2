@@ -5,7 +5,7 @@ import ParkAndCharge from "@routes/projects/ParkAndCharge";
 import UniPiece from "@routes/projects/UniPiece";
 import BrailleAi from "@routes/projects/BrailleAi";
 import VirtualMemories from "@routes/projects/VirtualMemories";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { tabsPropsType } from "@components/NestedTab";
 
 export default function Projects() {
@@ -37,7 +37,9 @@ export default function Projects() {
       <Accordion.Root
         width="full"
         value={project}
-        onValueChange={(e) => setProject(e.value)}
+        onValueChange={(e) => {
+          setProject(e.value);
+        }}
         collapsible
         lazyMount
       >
@@ -55,7 +57,19 @@ export default function Projects() {
               </>
             ) : null}
             <Accordion.ItemTrigger>
-              <Box display="flex" width="full" justifyContent="space-between">
+              <Box
+                paddingX={5}
+                paddingY={1}
+                display="flex"
+                width="full"
+                justifyContent="space-between"
+                cursor="pointer"
+                _hover={{
+                  bg: colorMode === "light" ? "gray.300" : "gray.800",
+                  rounded: "lg",
+                  border: "deeppink",
+                }}
+              >
                 <Text>{item.label}</Text>
                 <Box>
                   <Icon size="sm">
