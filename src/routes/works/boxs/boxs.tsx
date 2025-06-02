@@ -3,7 +3,6 @@ import Revamp from "./revamp";
 import RevampMobile from "./revampMobile";
 import NewFeature from "./newFeature";
 import type { tabsPropsType } from "@components/NestedTab";
-import { v4 as uuidv4 } from "uuid";
 import WorkLayout from "@layouts/WorkLayout";
 
 export const BoxsDemo: tabsPropsType[] = [
