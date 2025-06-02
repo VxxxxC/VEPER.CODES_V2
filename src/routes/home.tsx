@@ -248,7 +248,7 @@ const Home = () => {
                 GitHub
               </ChakraLink>
               <ChakraLink
-                href="https://www.instagram.com/vepercodes/"
+                href="https://www.instagram.com/veper.codes/"
                 target="_blank"
                 display="flex"
                 flexDirection="row"
