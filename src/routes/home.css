@@ -28,8 +28,9 @@
       }
       li {
         font-size: 13px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding: 10px;
+        margin-left: 10px;
+        margin-right:10px;
       }
       a {
         margin-top: 10px;
