@@ -3,10 +3,8 @@ import ThemeToggle from "@components/ThemeToggle";
 import { Box, IconButton, Menu, Portal, Stack } from "@chakra-ui/react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "../headerLogo.css";
-import { useColorMode } from "@chakra/components/ui/color-mode";
 
 export default function Navbar() {
-  const { colorMode } = useColorMode();
   return (
     <>
       <Box

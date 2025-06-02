@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Text, Accordion, Box, Center, Icon } from "@chakra-ui/react";
 import { FaAngleDown } from "react-icons/fa6";
 import { useColorMode } from "@chakra/components/ui/color-mode";

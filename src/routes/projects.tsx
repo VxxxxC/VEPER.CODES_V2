@@ -5,7 +5,7 @@ import ParkAndCharge from "@routes/projects/ParkAndCharge";
 import UniPiece from "@routes/projects/UniPiece";
 import BrailleAi from "@routes/projects/BrailleAi";
 import VirtualMemories from "@routes/projects/VirtualMemories";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { tabsPropsType } from "@components/NestedTab";
 
 export default function Projects() {
