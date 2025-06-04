@@ -41,7 +41,6 @@ export default function Projects() {
           setProject(e.value);
         }}
         collapsible
-        lazyMount
       >
         {projects.map((item, index) => (
           <Accordion.Item key={index} value={item.value}>
