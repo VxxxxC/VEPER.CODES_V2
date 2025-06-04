@@ -15,7 +15,6 @@ const HomeWelcomeMsg = () => {
       p={2}
       m={5}
       position="relative"
-      zIndex={10}
     >
       <Center>
         <Typewriter
