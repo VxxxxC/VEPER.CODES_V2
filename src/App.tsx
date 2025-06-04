@@ -18,6 +18,7 @@ function App() {
         flexDirection="column"
         alignItems="center"
         textStyle={{ base: "mobile", lg: "normal" }}
+        overflow="hidden"
       >
         <Box
           className="OuterBox"
