@@ -6,9 +6,9 @@ const Footer = () => {
 
   return (
     <>
-      <Box position="absolute" zIndex={10} bottom={5} width="full">
+      <Box position="absolute" zIndex={10} bottom={5}>
         <Center>
-          <Text textStyle="normal" textAlign="center" maxWidth="55%">
+          <Text textStyle="normal" textAlign="center" maxWidth="max-content">
             &copy; {today.getFullYear()}
             <span className="icon-name">VEPER.CODES</span> All rights reserved.
           </Text>
