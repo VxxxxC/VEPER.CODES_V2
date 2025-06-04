@@ -18,7 +18,6 @@ function App() {
         flexDirection="column"
         alignItems="center"
         textStyle={{ base: "mobile", lg: "normal" }}
-        overflow="hidden"
       >
         <Box
           className="OuterBox"
@@ -35,14 +34,15 @@ function App() {
             maxWidth: "80rem",
           }}
         >
+          <Navbar />
           <Container
             className="InnerBox"
             paddingY={5}
             width="full"
             height="full"
             lg={{ gridColumnStart: 2, gridColumnEnd: 5 }}
+            overflow="hidden"
           >
-            <Navbar />
             <Box marginY={20} className="App">
               <Routes>
                 <Route index element={<Home />} />
@@ -50,8 +50,8 @@ function App() {
                 <Route path="projects" element={<Projects />} />
               </Routes>
             </Box>
-            <Footer />
           </Container>
+          <Footer />
         </Box>
       </Box>
     </>
