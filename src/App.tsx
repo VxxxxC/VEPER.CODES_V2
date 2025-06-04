@@ -34,24 +34,23 @@ function App() {
             maxWidth: "80rem",
           }}
         >
-          <Navbar />
           <Container
             className="InnerBox"
             paddingY={5}
             width="full"
             height="full"
             lg={{ gridColumnStart: 2, gridColumnEnd: 5 }}
-            overflow="hidden"
           >
-            <Box marginY={20} className="App">
+            <Navbar />
+            <Box marginY={10} className="App">
               <Routes>
                 <Route index element={<Home />} />
                 <Route path="works" element={<Works />} />
                 <Route path="projects" element={<Projects />} />
               </Routes>
             </Box>
+            <Footer />
           </Container>
-          <Footer />
         </Box>
       </Box>
     </>
