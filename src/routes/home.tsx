@@ -13,7 +13,6 @@ import {
   Button,
   Center,
   Flex,
-  Table,
   Link as ChakraLink,
 } from "@chakra-ui/react";
 import { useColorMode } from "@chakra/components/ui/color-mode";
