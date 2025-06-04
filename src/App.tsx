@@ -1,11 +1,8 @@
-import { Routes, Route } from "react-router";
 import "./App.css";
 import Navbar from "@components/NavBar.tsx";
 import Footer from "./Footer.tsx";
-import Home from "@routes/home";
-import Works from "@routes/works";
-import Projects from "@routes/projects";
 import { Box, Container } from "@chakra-ui/react";
+import { Outlet, ScrollRestoration } from "react-router";
 
 function App() {
   return (
@@ -43,11 +40,9 @@ function App() {
           >
             <Navbar />
             <Box marginY={10} className="App">
-              <Routes>
-                <Route index element={<Home />} />
-                <Route path="works" element={<Works />} />
-                <Route path="projects" element={<Projects />} />
-              </Routes>
+              <Outlet />
+              {/*NOTE Refer to router.tsx , Outlet components representing the child nodes */}
+              <ScrollRestoration />
             </Box>
             <Footer />
           </Container>

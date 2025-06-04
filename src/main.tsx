@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router";
+import { RouterProvider } from "react-router";
+import router from "./router.tsx";
 import "../index.css";
-import App from "./App.tsx";
 import { ColorModeProvider } from "./src/components/ui/color-mode.tsx";
 import {
   ChakraProvider,
@@ -55,9 +55,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ChakraProvider value={system}>
       <ColorModeProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <RouterProvider router={router} />
       </ColorModeProvider>
     </ChakraProvider>
   </StrictMode>,
