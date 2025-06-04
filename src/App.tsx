@@ -36,12 +36,19 @@ function App() {
             paddingY={5}
             width="full"
             height="full"
-            lg={{ gridColumnStart: 2, gridColumnEnd: 5 }}
+            display="flex"
+            flexDir="column"
+            alignItems="center"
+            lg={{
+              gridColumnStart: 2,
+              gridColumnEnd: 5,
+            }}
           >
             <Navbar />
-            <Box marginY={10} className="App">
+            <Box marginBottom={24} className="App">
               <Outlet />
               {/*NOTE Refer to router.tsx , Outlet components representing the child nodes */}
+
               <ScrollRestoration />
             </Box>
             <Footer />

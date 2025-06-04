@@ -6,7 +6,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
 }
 
 body {
@@ -20,4 +20,5 @@ body {
         );
   background-color: light-dark(#eee7dc, #18181b);
   transition: all 0.5s ease-in-out;
+  scroll-behavior: auto !important;
 }
