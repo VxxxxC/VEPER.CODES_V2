@@ -12,7 +12,7 @@ export default function Navbar() {
         top={0}
         zIndex={10}
         backdropFilter="blur(10px)"
-        width="100%"
+        width="full"
         display="flex"
         direction="row"
         justifyContent="center"
