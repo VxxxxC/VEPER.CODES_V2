@@ -36,6 +36,7 @@ function App() {
             paddingY={5}
             width="full"
             height="full"
+            minHeight="100vh"
             display="flex"
             flexDir="column"
             alignItems="center"
@@ -45,7 +46,7 @@ function App() {
             }}
           >
             <Navbar />
-            <Box marginBottom={24} className="App">
+            <Box marginBottom={24} className="App" width="full" height="full">
               <Outlet />
               {/*NOTE Refer to router.tsx , Outlet components representing the child nodes */}
 
