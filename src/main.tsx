@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router";
+import { CookiesProvider } from "react-cookie";
 import router from "./router.tsx";
 import "../index.css";
 import { ColorModeProvider } from "./src/components/ui/color-mode.tsx";
@@ -53,10 +54,12 @@ const system = createSystem(defaultConfig, config);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ChakraProvider value={system}>
-      <ColorModeProvider>
-        <RouterProvider router={router} />
-      </ColorModeProvider>
-    </ChakraProvider>
+    <CookiesProvider defaultSetOptions={{ path: "/" }}>
+      <ChakraProvider value={system}>
+        <ColorModeProvider>
+          <RouterProvider router={router} />
+        </ColorModeProvider>
+      </ChakraProvider>
+    </CookiesProvider>
   </StrictMode>,
 );

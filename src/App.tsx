@@ -3,8 +3,27 @@ import Navbar from "@components/NavBar.tsx";
 import Footer from "./Footer.tsx";
 import { Box, Container } from "@chakra-ui/react";
 import { Outlet, ScrollRestoration } from "react-router";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
 
 function App() {
+  const [cookies, setCookie] = useCookies(["onBoard"], {
+    doNotParse: true,
+    doNotUpdate: true,
+  });
+
+  useEffect(() => {
+    const expired = new Date();
+    expired.setDate(expired.getDate() + 1);
+    if (!cookies.onBoard || cookies.onBoard === undefined) {
+      setCookie("onBoard", true, {
+        path: "/",
+        expires: expired,
+        secure: true,
+        sameSite: "none",
+      });
+    }
+  }, []);
   return (
     <>
       <Box
