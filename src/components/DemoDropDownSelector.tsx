@@ -16,6 +16,7 @@ const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
         value={dropdown}
         onValueChange={(e) => setDropdown(e.value)}
         collapsible
+        lazyMount
       >
         {props.map((item, index) => (
           <Accordion.Item key={index} value={item.title}>
