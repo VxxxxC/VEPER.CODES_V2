@@ -34,8 +34,6 @@ const UniPiece = () => {
     desc,
     feat: features,
     techIcons,
-    platform: true,
-    mobile: "iOS",
   };
 
   return (
