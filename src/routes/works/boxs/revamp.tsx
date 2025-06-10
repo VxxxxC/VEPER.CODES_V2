@@ -1,7 +1,9 @@
-import DemoDropdownSelector from "@components/DemoDropDownSelector";
+import DemoDropdownSelector, {
+  type DemoDropdownType,
+} from "@components/DemoDropDownSelector";
 
 const revamp = () => {
-  const content = [
+  const content: DemoDropdownType[] = [
     {
       title: "Close Shop",
       content: [

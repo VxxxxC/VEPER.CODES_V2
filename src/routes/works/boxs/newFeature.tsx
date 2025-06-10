@@ -1,4 +1,7 @@
-import DemoDropdownSelector from "@components/DemoDropDownSelector";
+import DemoDropdownSelector, {
+  type DemoDropdownType,
+  type DemoImgContent,
+} from "@components/DemoDropDownSelector";
 import orderMain from "@assets/1.5/new feature/Order Manage/main_board.png";
 import filterOrderStatus1 from "@assets/1.5/new feature/Order Manage/filter_order_status_1.png";
 import filterOrderStatus2 from "@assets/1.5/new feature/Order Manage/filter_order_status_2.png";
@@ -13,12 +16,12 @@ import historyDetail from "@assets/1.5/new feature/Member Dashboard/order_histor
 import memberPoint from "@assets/1.5/new feature/Member Dashboard/member_point.png";
 
 const newFeature = () => {
-  const foodStatus = [
+  const foodStatus: DemoImgContent[] = [
     { name: "Before Change", img: beforeChange },
     { name: "After Change", img: afterChange },
   ];
 
-  const memberDashboard = [
+  const memberDashboard: DemoImgContent[] = [
     { name: "", img: memberMain },
     { name: "Member Info", img: memberInfo },
     { name: "Member Order History", img: orderHistory },
@@ -26,14 +29,14 @@ const newFeature = () => {
     { name: "Member Point", img: memberPoint },
   ];
 
-  const orderManage = [
+  const orderManage: DemoImgContent[] = [
     { name: "", img: orderMain },
     { name: "Filter Order Status 1", img: filterOrderStatus1 },
     { name: "Filter Order Status 2", img: filterOrderStatus2 },
     { name: "Filter Payment Before", img: filterPaymentStatusBefore },
     { name: "Filter Payment After", img: filterPaymentStatusAfter },
   ];
-  const content = [
+  const content: DemoDropdownType[] = [
     {
       title: "Food Order Status",
       content: foodStatus,
