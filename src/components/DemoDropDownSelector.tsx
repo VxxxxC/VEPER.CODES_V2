@@ -1,13 +1,32 @@
 import { useState } from "react";
-import { Text, Accordion, Box, Center, Icon } from "@chakra-ui/react";
+import { Text, Accordion, Box, Center, Icon, Image } from "@chakra-ui/react";
 import { FaAngleDown } from "react-icons/fa6";
 import { useColorMode } from "@chakra/components/ui/color-mode";
 
-export type DemoDropdownType = { title: string; content: string };
+export type DemoImgContent = {
+  name: string;
+  img: string;
+};
+
+export type DemoDropdownType =
+  | {
+      title: string;
+      content: DemoImgContent[];
+      isVideo?: false;
+    }
+  | {
+      title: string;
+      content: string[];
+      isVideo: true;
+    };
 
 const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
   const { colorMode } = useColorMode();
   const [dropdown, setDropdown] = useState<string[]>([props[0].title]);
+
+  const openNewWindow = (url: string) => {
+    window.open(url, "_blank");
+  };
 
   return (
     <>
@@ -26,6 +45,7 @@ const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
                 paddingY={1}
                 display="flex"
                 width="full"
+                height="full"
                 justifyContent="space-between"
                 cursor="pointer"
                 _hover={{
@@ -46,9 +66,47 @@ const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
             <Accordion.ItemContent>
               <Accordion.ItemBody>
                 <Center>
-                  <video controls>
-                    <source src={item.content} type="video/mp4" />
-                  </video>
+                  {item.isVideo ? (
+                    item.content.map((vid) => {
+                      return (
+                        <video controls>
+                          <source src={vid as string} type="video/mp4" />
+                        </video>
+                      );
+                    })
+                  ) : (
+                    <Box display="flex" flexDir="column" height="full" gapY={5}>
+                      {item.content.map(
+                        (
+                          {
+                            name,
+                            img,
+                          }: {
+                            name: DemoImgContent["name"];
+                            img: DemoImgContent["img"];
+                          },
+                          index,
+                        ) => (
+                          <Box
+                            onClick={() => openNewWindow(img)}
+                            key={index}
+                            rounded="lg"
+                            _hover={{ scale: 1.02 }}
+                            transition="all 0.3s ease-in-out"
+                            touchAction="auto"
+                            m={2}
+                            p={2}
+                          >
+                            <Text px={2} textStyle="sm" color="pink.solid">
+                              {name}
+                            </Text>
+
+                            <Image rounded="md" fit="contain" src={img} />
+                          </Box>
+                        ),
+                      )}
+                    </Box>
+                  )}
                 </Center>
               </Accordion.ItemBody>
             </Accordion.ItemContent>

@@ -4,13 +4,17 @@ const mobileVersion = () => {
   const content = [
     {
       title: "Order Record",
-      content:
+      content: [
         "https://github.com/VxxxxC/VEPER.CODES/blob/master/demoSrc/1.5/mobile%20version/Order_record(mobile).mov?raw=true",
+      ],
+      isVideo: true,
     },
     {
       title: "Ordering and Checkout",
-      content:
+      content: [
         "https://github.com/VxxxxC/VEPER.CODES/blob/master/demoSrc/1.5/mobile%20version/Order_record(mobile).mov?raw=true",
+      ],
+      isVideo: true,
     },
   ];
 
