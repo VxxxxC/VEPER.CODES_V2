@@ -67,15 +67,17 @@ const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
               <Accordion.ItemBody>
                 <Center>
                   {item.isVideo ? (
-                    item.content.map((vid) => {
+                    item.content.map((vid, index) => {
                       return (
-                        <video controls>
-                          <source src={vid as string} type="video/mp4" />
-                        </video>
+                        <Box key={index}>
+                          <video controls>
+                            <source src={vid as string} type="video/mp4" />
+                          </video>
+                        </Box>
                       );
                     })
                   ) : (
-                    <Box display="flex" flexDir="column" height="full" gapY={5}>
+                    <Box display="flex" flexDir="column" gapY={5}>
                       {item.content.map(
                         (
                           {
@@ -101,7 +103,12 @@ const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
                               {name}
                             </Text>
 
-                            <Image rounded="md" fit="contain" src={img} />
+                            <Image
+                              rounded="md"
+                              fit="contain"
+                              maxHeight="50rem"
+                              src={img}
+                            />
                           </Box>
                         ),
                       )}
