@@ -14,6 +14,7 @@ import memberInfo from "@assets/1.5/new feature/Member Dashboard/member_info.png
 import orderHistory from "@assets/1.5/new feature/Member Dashboard/order_history.png";
 import historyDetail from "@assets/1.5/new feature/Member Dashboard/order_history.png";
 import memberPoint from "@assets/1.5/new feature/Member Dashboard/member_point.png";
+import filterDayRange from "@assets/1.5/new feature/Order Manage/filter_day_range.png";
 
 const newFeature = () => {
   const foodStatus: DemoImgContent[] = [
@@ -35,6 +36,7 @@ const newFeature = () => {
     { name: "Filter Order Status 2", img: filterOrderStatus2 },
     { name: "Filter Payment Before", img: filterPaymentStatusBefore },
     { name: "Filter Payment After", img: filterPaymentStatusAfter },
+    { name: " Filter By Day Range", img: filterDayRange },
   ];
   const content: DemoDropdownType[] = [
     {
@@ -46,7 +48,7 @@ const newFeature = () => {
       content: memberDashboard,
     },
     {
-      title: "Order Mange",
+      title: "Order Management",
       content: orderManage,
     },
   ];
