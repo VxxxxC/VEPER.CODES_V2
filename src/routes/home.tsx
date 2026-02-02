@@ -14,6 +14,7 @@ import {
   Center,
   Flex,
   Link as ChakraLink,
+  Grid,
 } from "@chakra-ui/react";
 import { useColorMode } from "@chakra/components/ui/color-mode";
 import HomeWelcomeMsg from "@components/HomeWelcomeMsg";
@@ -84,6 +85,31 @@ const Home = () => {
                 <div className="mb-2 h-1 bg-gray-600"></div>
               </Box>
             </Box>
+            <fieldset className="langIUsed">
+              <legend>Language</legend>
+              <Flex
+                direction={{ base: "column", lg: "row" }}
+                justifyContent={{ base: "start", lg: "center" }}
+                alignItems={{ base: "center" }}
+                paddingBottom={3}
+              >
+                <Grid
+                  templateColumns={{
+                    base: "repeat(1, 1fr)",
+                    lg: "repeat(3, 1fr)",
+                  }}
+                  padding={1}
+                  direction={{ base: "column", lg: "row" }}
+                  gap={5}
+                >
+                  <Selector props="Javascript" size={30} bgTransparent={true} />
+                  <Selector props="Typescript" size={30} bgTransparent={true} />
+                  <Selector props="Python" size={30} bgTransparent={true} />
+                  <Selector props="Rust" size={30} bgTransparent={true} />
+                  <Selector props="Solidity" size={30} bgTransparent={true} />
+                </Grid>
+              </Flex>
+            </fieldset>
             <Box
               textStyle="body"
               padding={5}
@@ -108,13 +134,21 @@ const Home = () => {
                 alignItems={{ base: "center", lg: "start" }}
                 gapY={5}
               >
-                <p>Typescript</p>
-                <p>React.js</p>
-                <p>React-Native</p>
-                <p>Redux</p>
-                <p>Redux-Thunk</p>
-                <p>Vue.js</p>
-                <p>Tailwindcss</p>
+                <Grid
+                  templateColumns={{
+                    base: "repeat(1, 1fr)",
+                    lg: "repeat(2, 1fr)",
+                  }}
+                  padding={2}
+                  gap={8}
+                >
+                  <p>React.js</p>
+                  <p>React-Native</p>
+                  <p>Redux</p>
+                  <p>Vue.js</p>
+                  <p>Tailwindcss</p>
+                  <p>Ether.js</p>
+                </Grid>
               </Flex>
             </fieldset>
             <fieldset className="border border-zinc-500">
@@ -127,24 +161,32 @@ const Home = () => {
                 alignItems={{ base: "center", lg: "start" }}
                 gapY={5}
               >
-                <p>Node.js</p>
-                <p>Express.js</p>
-                <p>PostgreSQL</p>
-                <p>MongoDB</p>
+                <Grid
+                  templateColumns={{
+                    base: "repeat(1, 1fr)",
+                    lg: "repeat(2, 1fr)",
+                  }}
+                  padding={2}
+                  gap={8}
+                >
+                  <p>Node.js</p>
+                  <p>Socket.io</p>
+                  <p>Express.js</p>
+                  <p>Feathers.js</p>
+                  <p>PostgreSQL</p>
+                  <p>MongoDB</p>
+                </Grid>
               </Flex>
             </fieldset>
-            <fieldset className="currentLearn font-black text-lg text-orange-500 border-4 border-teal-400 dark:border-cyan-500">
+            <fieldset className="currentLearn">
               <legend>Currently Learning</legend>
               <Flex
-                padding={2}
+                paddingBottom={3}
                 direction={{ base: "column", lg: "row" }}
-                justifyContent={{ base: "start" }}
+                justifyContent={{ base: "start", lg: "center" }}
                 alignItems={{ base: "center" }}
-                gapY={5}
               >
-                <Selector props="Blender" size={30} />
-                <Selector props="Rust" size={30} />
-                <Selector props="Solidity" size={30} />
+                <Selector props="Blender" size={30} bgTransparent={true} />
               </Flex>
             </fieldset>
           </Box>

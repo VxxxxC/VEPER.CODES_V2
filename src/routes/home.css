@@ -38,7 +38,9 @@
       }
 
       .currentLearn {
+          @apply font-black text-lg text-orange-500 border-4 border-cyan-500;
+      }
 
-
-          @apply font-black text-lg text-orange-500 border-4 border-teal-400 dark:border-cyan-500;
+      .langIUsed {
+          @apply mb-5 font-black text-lg text-cyan-500 border-4 border-emerald-500;
       }
