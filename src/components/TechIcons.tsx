@@ -24,6 +24,7 @@ import {
   SiAmazonroute53,
   SiAmazonec2,
   SiAmazons3,
+  SiNeovim,
 } from "react-icons/si";
 import { GiFeather } from "react-icons/gi";
 
@@ -54,7 +55,8 @@ export type SelectorProps =
   | "Solidity"
   | "Blender"
   | "Nuxt"
-  | "Vue";
+  | "Vue"
+  | "Neovim";
 
 const selector = ({
   props,
@@ -306,9 +308,18 @@ const selector = ({
         );
       case "Vue":
         return (
-          <div className={bgTransparent ? "" : "rounded-3xl bg-stone-200"}>
+          <div className={bgTransparent ? "" : "rounded-3xl"}>
             <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-emerald-400">
               <SiVuedotjs size={size} color="emerald-400" />
+              {showName ? name : null}
+            </div>
+          </div>
+        );
+      case "Neovim":
+        return (
+          <div className={bgTransparent ? "" : "rounded-3xl"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-emerald-400">
+              <SiNeovim size={size} color="emerald-400" />
               {showName ? name : null}
             </div>
           </div>

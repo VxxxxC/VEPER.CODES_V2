@@ -15,6 +15,7 @@ import {
   Flex,
   Link as ChakraLink,
   Grid,
+  Text,
 } from "@chakra-ui/react";
 import { useColorMode } from "@chakra/components/ui/color-mode";
 import HomeWelcomeMsg from "@components/HomeWelcomeMsg";
@@ -84,6 +85,10 @@ const Home = () => {
                 Tech I Use
                 <div className="mb-2 h-1 bg-gray-600"></div>
               </Box>
+            </Box>
+            <Box display="flex" flexDir="row" alignItems="center">
+              <Text textStyle="header">IDE :</Text>
+              <Selector props="Neovim" size={30} />
             </Box>
             <fieldset className="langIUsed">
               <legend>Language</legend>
