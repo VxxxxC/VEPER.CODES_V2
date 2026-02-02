@@ -67,7 +67,7 @@ function App() {
             <Navbar />
             <Box marginBottom={24} className="App" width="full" height="full">
               <Outlet />
-              {/*NOTE Refer to router.tsx , Outlet components representing the child nodes */}
+              {/* INFO: Refer to router.tsx , Outlet components representing the child nodes */}
 
               <ScrollRestoration />
             </Box>
