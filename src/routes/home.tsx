@@ -142,17 +142,29 @@ const Home = () => {
                 <Grid
                   templateColumns={{
                     base: "repeat(1, 1fr)",
-                    lg: "repeat(2, 1fr)",
+                    lg: "repeat(4, 1fr)",
                   }}
                   padding={2}
                   gap={8}
                 >
-                  <p>React.js</p>
-                  <p>React-Native</p>
-                  <p>Redux</p>
-                  <p>Vue.js</p>
-                  <p>Tailwindcss</p>
-                  <p>Ether.js</p>
+                  <Selector props="React" size={30} bgTransparent={true} />
+                  <Selector props="Next" size={30} bgTransparent={true} />
+                  <Selector
+                    props="React Native"
+                    size={30}
+                    bgTransparent={true}
+                  />
+                  <Selector props="Redux" size={30} bgTransparent={true} />
+                  <Selector props="Vue" size={30} bgTransparent={true} />
+                  <Selector props="Nuxt" size={30} bgTransparent={true} />
+                  <Selector props="Svelte" size={30} bgTransparent={true} />
+                  <Selector props="SvelteKit" size={30} bgTransparent={true} />
+                  <Selector
+                    props="Tailwindcss"
+                    size={30}
+                    bgTransparent={true}
+                  />
+                  <Selector props="Ethersjs" size={30} bgTransparent={true} />
                 </Grid>
               </Flex>
             </fieldset>
@@ -169,17 +181,21 @@ const Home = () => {
                 <Grid
                   templateColumns={{
                     base: "repeat(1, 1fr)",
-                    lg: "repeat(2, 1fr)",
+                    lg: "repeat(4, 1fr)",
                   }}
                   padding={2}
                   gap={8}
                 >
-                  <p>Node.js</p>
-                  <p>Socket.io</p>
-                  <p>Express.js</p>
-                  <p>Feathers.js</p>
-                  <p>PostgreSQL</p>
-                  <p>MongoDB</p>
+                  <Selector props="Nodejs" size={30} bgTransparent={true} />
+                  <Selector props="Socket.io" size={30} bgTransparent={true} />
+                  <Selector props="Express" size={30} bgTransparent={true} />
+                  <Selector
+                    props="Feathers.js"
+                    size={30}
+                    bgTransparent={true}
+                  />
+                  <Selector props="PostgreSQL" size={30} bgTransparent={true} />
+                  <Selector props="MongoDB" size={30} bgTransparent={true} />
                 </Grid>
               </Flex>
             </fieldset>

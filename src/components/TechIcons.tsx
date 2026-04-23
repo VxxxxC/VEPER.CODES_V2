@@ -25,6 +25,10 @@ import {
   SiAmazonec2,
   SiAmazons3,
   SiNeovim,
+  SiSvelte,
+  SiNextdotjs,
+  SiEthers,
+  SiSocketdotio,
 } from "react-icons/si";
 import { GiFeather } from "react-icons/gi";
 
@@ -56,7 +60,12 @@ export type SelectorProps =
   | "Blender"
   | "Nuxt"
   | "Vue"
-  | "Neovim";
+  | "Neovim"
+  | "Svelte"
+  | "SvelteKit"
+  | "Next"
+  | "Ethersjs"
+  | "Socket.io";
 
 const selector = ({
   props,
@@ -120,8 +129,8 @@ const selector = ({
       case "Express":
         return (
           <div className={bgTransparent ? "" : "rounded-3xl bg-black"}>
-            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-white">
-              <SiExpress size={size} color="white" />
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center">
+              <SiExpress size={size} />
               {showName ? name : null}
             </div>
           </div>
@@ -236,9 +245,9 @@ const selector = ({
         );
       case "Feathers.js":
         return (
-          <div className={bgTransparent ? "" : "rounded-3xl bg-stone-200"}>
-            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-orange-400">
-              <GiFeather size={size} color="orange-400" />
+          <div className={bgTransparent ? "" : "rounded-3xl"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center ">
+              <GiFeather size={size} />
               {showName ? name : null}
             </div>
           </div>
@@ -320,6 +329,51 @@ const selector = ({
           <div className={bgTransparent ? "" : "rounded-3xl"}>
             <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-emerald-400">
               <SiNeovim size={size} color="emerald-400" />
+              {showName ? name : null}
+            </div>
+          </div>
+        );
+      case "Svelte":
+        return (
+          <div className={bgTransparent ? "" : "rounded-3xl bg-orange-900"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-orange-400">
+              <SiSvelte size={size} color="orange-400" />
+              {showName ? name : null}
+            </div>
+          </div>
+        );
+      case "SvelteKit":
+        return (
+          <div className={bgTransparent ? "" : "rounded-3xl bg-orange-900"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-orange-400">
+              <SiSvelte size={size} color="orange-400" />
+              {showName ? name : null}
+            </div>
+          </div>
+        );
+      case "Next":
+        return (
+          <div className={bgTransparent ? "" : "rounded-3xl"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center">
+              <SiNextdotjs size={size} />
+              {showName ? name : null}
+            </div>
+          </div>
+        );
+      case "Ethersjs":
+        return (
+          <div className={bgTransparent ? "" : "rounded-3xl"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center">
+              <SiEthers size={size} />
+              {showName ? name : null}
+            </div>
+          </div>
+        );
+      case "Socket.io":
+        return (
+          <div className={bgTransparent ? "" : "rounded-3xl"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center">
+              <SiSocketdotio size={size} />
               {showName ? name : null}
             </div>
           </div>
