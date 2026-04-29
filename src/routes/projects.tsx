@@ -5,6 +5,7 @@ import ParkAndCharge from "@routes/projects/ParkAndCharge";
 import UniPiece from "@routes/projects/UniPiece";
 import BrailleAi from "@routes/projects/BrailleAi";
 import VirtualMemories from "@routes/projects/VirtualMemories";
+import MiniDao from "@routes/projects/MiniDao";
 import { useState } from "react";
 import type { tabsPropsType } from "@components/NestedTab";
 
@@ -12,6 +13,11 @@ export default function Projects() {
   const { colorMode } = useColorMode();
 
   const projects: tabsPropsType[] = [
+    {
+      value: "Mini Dao",
+      label: "Mini Dao",
+      content: <MiniDao />,
+    },
     {
       value: "ParkAndCharge",
       label: "Park And Charge",
@@ -50,7 +56,7 @@ export default function Projects() {
                 <Text textStyle="header">Personal</Text>
                 <Box height="2px" width="full" bgColor="cyan.500" />
               </>
-            ) : index === 1 ? (
+            ) : index === 2 ? (
               <>
                 <Text textStyle="header">Academy</Text>
                 <Box height="2px" width="full" bgColor="cyan.500" />
