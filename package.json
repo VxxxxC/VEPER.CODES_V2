@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "check": "tsc --strict --alowJs --checkJs --noEmit",
+    "check": "tsc --strict --allowJs --checkJs --noEmit",
     "lint": "eslint .",
     "preview": "vite preview"
   },
