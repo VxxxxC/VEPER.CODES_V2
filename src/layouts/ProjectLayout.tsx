@@ -5,6 +5,9 @@ import { Suspense } from "react";
 import { SiAndroid, SiIos } from "react-icons/si";
 import { lazy } from "react";
 import MotionDiv from "@components/MotionDiv.tsx";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { Alert, Button, Link as ChakraLink, Center } from "@chakra-ui/react";
+import { PiWarningCircle } from "react-icons/pi";
 
 export type mobileType = "iOS" | "Android" | "Duo";
 
@@ -16,6 +19,8 @@ export type projectPropsType =
       feat: string[];
       techIcons: string[];
       platform?: false;
+      link?: string;
+      alert?: string;
     }
   | {
       title: string;
@@ -26,6 +31,7 @@ export type projectPropsType =
       platform: true;
       mobile: mobileType;
       link?: string;
+      alert?: string;
     };
 
 const LazyContentImage = lazy(() => import("./ProjectContentImage.tsx"));
@@ -129,6 +135,29 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
               ) : null}
             </Box>
             <Box display="block" spaceY={2}>
+              {props.link ? (
+                <ChakraLink
+                  href={props.link}
+                  target="_blank"
+                  display="flex"
+                  flexDirection="row"
+                  justifyContent="center"
+                  alignItems="center"
+                  rounded="lg"
+                  p={2}
+                >
+                  <Button
+                    size="xl"
+                    variant="surface"
+                    colorPalette="cyan"
+                    rounded="sm"
+                  >
+                    {props.title}
+                    <MdKeyboardArrowRight size={22} />
+                  </Button>
+                </ChakraLink>
+              ) : null}
+
               <Box
                 width="max-content"
                 paddingX={2}
@@ -137,10 +166,19 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
               >
                 Desc
               </Box>
-              <div id="desc" className="text-sm font-sans">
+              <div id="desc" className="text-sm font-sans text-left">
                 {props.desc}
               </div>
             </Box>
+
+            {props.alert ? (
+              <Alert.Root status="warning" textAlign="left" variant="surface">
+                <PiWarningCircle size={20} />
+                <Alert.Content>
+                  <Alert.Title>{props.alert}</Alert.Title>
+                </Alert.Content>
+              </Alert.Root>
+            ) : null}
             <Box width="full" className="flex my-4 gap-x-10 items-center">
               <fieldset className="h-full w-full overflow-auto scroll-smooth text-left p-5 rounded-lg">
                 <legend className="px-2 text-base font-medium">Features</legend>
