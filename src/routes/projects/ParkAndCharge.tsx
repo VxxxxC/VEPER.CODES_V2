@@ -9,7 +9,7 @@ const ParkAndCharge = () => {
     "https://user-images.githubusercontent.com/80626616/217342259-49979720-d127-4ce7-97f7-d1dc23847753.gif",
   ];
   const desc = "A Real-time Hong Kong car park parking slot update mobile app";
-  const features = [
+  const feat = [
     "18 Districts Selection",
     "MapView embedded",
     "CarPark location drop-pin",
@@ -30,7 +30,7 @@ const ParkAndCharge = () => {
     title,
     img,
     desc,
-    feat: features,
+    feat,
     techIcons,
     platform: true,
     mobile: "iOS",
