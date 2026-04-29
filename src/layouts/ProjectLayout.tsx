@@ -6,7 +6,7 @@ import { SiAndroid, SiIos } from "react-icons/si";
 import { lazy } from "react";
 import MotionDiv from "@components/MotionDiv.tsx";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { Alert, Button, Link as ChakraLink, Center } from "@chakra-ui/react";
+import { Alert, Button, Link as ChakraLink } from "@chakra-ui/react";
 import { PiWarningCircle } from "react-icons/pi";
 
 export type mobileType = "iOS" | "Android" | "Duo";
