@@ -73,7 +73,7 @@ const selector = ({
   showName = true,
   bgTransparent = false,
 }: {
-  props: SelectorProps;
+  props: SelectorProps | string;
   size?: number;
   showName?: boolean;
   bgTransparent?: boolean;
@@ -128,7 +128,7 @@ const selector = ({
         );
       case "Express":
         return (
-          <div className={bgTransparent ? "" : "rounded-3xl bg-black"}>
+          <div className={bgTransparent ? "" : "rounded-3xl bg-white"}>
             <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center">
               <SiExpress size={size} />
               {showName ? name : null}
@@ -290,7 +290,7 @@ const selector = ({
         );
       case "Solidity":
         return (
-          <div className={bgTransparent ? "" : "rounded-3xl bg-transparent"}>
+          <div className={bgTransparent ? "" : "rounded-3xl bg-white"}>
             <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-gray-500">
               <SiSolidity size={size} color="gray-700" />
               {showName ? name : null}
@@ -353,7 +353,7 @@ const selector = ({
         );
       case "Next":
         return (
-          <div className={bgTransparent ? "" : "rounded-3xl"}>
+          <div className={bgTransparent ? "" : "rounded-3xl bg-white"}>
             <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center">
               <SiNextdotjs size={size} />
               {showName ? name : null}
@@ -374,6 +374,15 @@ const selector = ({
           <div className={bgTransparent ? "" : "rounded-3xl"}>
             <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center">
               <SiSocketdotio size={size} />
+              {showName ? name : null}
+            </div>
+          </div>
+        );
+
+      default:
+        return (
+          <div className={bgTransparent ? "" : "rounded-3xl bg-white"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-gray-500">
               {showName ? name : null}
             </div>
           </div>
