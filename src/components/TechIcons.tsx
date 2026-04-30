@@ -128,8 +128,8 @@ const selector = ({
         );
       case "Express":
         return (
-          <div className={bgTransparent ? "" : "rounded-3xl bg-white"}>
-            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center">
+          <div className={bgTransparent ? "" : "rounded-3xl bg-gray-800"}>
+            <div className="w-[140px] font-sans m-2 py-1 gap-2 flex justify-center items-center text-gray-300">
               <SiExpress size={size} />
               {showName ? name : null}
             </div>

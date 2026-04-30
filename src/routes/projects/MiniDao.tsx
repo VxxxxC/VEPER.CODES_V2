@@ -31,6 +31,7 @@ const MiniDao = () => {
     "OpenZeppelin",
     "Wagmi",
     "Viem",
+    "IPFS/Filebase",
   ];
 
   const projectProps: projectPropsType = {
