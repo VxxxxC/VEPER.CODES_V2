@@ -26,6 +26,7 @@ const MiniDao = () => {
     "Typescript",
     "Svelte",
     "SvelteKit",
+    "Tailwindcss",
     "Solidity",
     "Foundry",
     "OpenZeppelin",
