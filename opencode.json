@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "formatter": true,
+  "lsp": true,
+  "model": "opencode-go/kimi-k2.7-code",
+  "small_model": "opencode-go/kimi-k2.7-code",
+  "permission": {
+    "write": "allow",
+    "edit": "ask",
+    "bash": "ask",
+    "read": "allow"
+  },
+  "subagent_depth": 1,
+  "autoupdate": true
+}
