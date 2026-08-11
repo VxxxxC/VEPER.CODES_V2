@@ -1,0 +1,19 @@
+import ragPostgresPgvector from "./posts/rag-postgres-pgvector.md?raw";
+
+export interface BlogPostType {
+  slug: string;
+  title: string;
+  date: string;
+  content: string;
+}
+
+const posts: BlogPostType[] = [
+  {
+    slug: "rag-postgres-pgvector",
+    title: "RAG in Depth: Vector Search with PostgreSQL & pgvector",
+    date: "2026-08-11",
+    content: ragPostgresPgvector,
+  },
+];
+
+export default posts;

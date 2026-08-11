@@ -44,6 +44,7 @@ export default function Navbar() {
           >
             <Link to="/works"> WORKS </Link>
             <Link to="/projects"> PROJECTS </Link>
+            <Link to="/blog"> BLOG </Link>
           </Box>
 
           <Box>
@@ -71,6 +72,9 @@ export default function Navbar() {
                     </Menu.Item>
                     <Menu.Item value="projects">
                       <Link to="/projects"> PROJECTS </Link>
+                    </Menu.Item>
+                    <Menu.Item value="blog">
+                      <Link to="/blog"> BLOG </Link>
                     </Menu.Item>
                   </Menu.Content>
                 </Menu.Positioner>
