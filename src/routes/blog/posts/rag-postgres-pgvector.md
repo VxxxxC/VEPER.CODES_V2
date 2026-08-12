@@ -7,8 +7,6 @@ Why it beats plain generation:
 - **Domain knowledge** — plug in legal, medical, or internal company documents.
 - **User-specific context** — each query can pull from private data without leaking it to the model.
 
-Key sources for this post: GeeksforGeeks' [RAG overview](https://www.geeksforgeeks.org/nlp/what-is-retrieval-augmented-generation-rag/) and Encore's [pgvector guide](https://encore.dev/blog/you-probably-dont-need-a-vector-database).
-
 ## 1. RAG components
 
 A minimal RAG pipeline has nine moving parts:
