@@ -1,3 +1,4 @@
+import ragLangchainLanggraph from "./posts/rag-langchain-langgraph.md?raw";
 import ragPostgresPgvector from "./posts/rag-postgres-pgvector.md?raw";
 
 export interface BlogPostType {
@@ -8,6 +9,12 @@ export interface BlogPostType {
 }
 
 const posts: BlogPostType[] = [
+  {
+    slug: "rag-langchain-langgraph",
+    title: "RAG in Depth: LangChain and LangGraph",
+    date: "2026-08-15",
+    content: ragLangchainLanggraph,
+  },
   {
     slug: "rag-postgres-pgvector",
     title: "RAG in Depth: Vector Search with PostgreSQL & pgvector",
