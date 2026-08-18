@@ -1,3 +1,4 @@
+import ragResilientHybridCrag from "./posts/rag-resilient-hybrid-crag.md?raw";
 import ragLangchainLanggraph from "./posts/rag-langchain-langgraph.md?raw";
 import ragPostgresPgvector from "./posts/rag-postgres-pgvector.md?raw";
 
@@ -9,6 +10,12 @@ export interface BlogPostType {
 }
 
 const posts: BlogPostType[] = [
+  {
+    slug: "rag-resilient-hybrid-crag",
+    title: "RAG in Depth: Resilient Hybrid Pipelines with Smart Routing, Local Fallbacks, and Corrective RAG (CRAG)",
+    date: "2026-08-18",
+    content: ragResilientHybridCrag,
+  },
   {
     slug: "rag-langchain-langgraph",
     title: "RAG in Depth: LangChain and LangGraph",
