@@ -23,6 +23,8 @@ A minimal RAG pipeline has nine moving parts:
 
 ## 2. How it works
 
+![4-steps](https://mintcdn.com/langchain-5e9cc07a/I6RpA28iE233vhYX/images/rag_indexing.png?fit=max&auto=format&n=I6RpA28iE233vhYX&q=85&s=21403ce0d0c772da84dcc5b75cff4451)
+
 Two phases:
 
 ```
