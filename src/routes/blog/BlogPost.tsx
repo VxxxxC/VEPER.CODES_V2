@@ -13,13 +13,7 @@ export default function BlogPost() {
   if (!post) {
     return (
       <MotionDiv title="Not Found">
-        <Box
-          width="full"
-          display="flex"
-          flexDir="column"
-          alignItems="center"
-          gapY={4}
-        >
+        <Box width="full" display="flex" flexDir="column" alignItems="center" gapY={4}>
           <Text textStyle="header">Post not found</Text>
           <Link to="/blog">Back to Blog</Link>
         </Box>

@@ -1,9 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import { IconButton } from "@chakra-ui/react";
-import {
-  useColorMode,
-  useColorModeValue,
-} from "@chakra/components/ui/color-mode";
+import { useColorMode, useColorModeValue } from "@chakra/components/ui/color-mode";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 function ThemeToggle() {

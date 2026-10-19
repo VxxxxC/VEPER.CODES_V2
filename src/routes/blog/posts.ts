@@ -12,7 +12,8 @@ export interface BlogPostType {
 const posts: BlogPostType[] = [
   {
     slug: "rag-resilient-hybrid-crag",
-    title: "RAG in Depth: Resilient Hybrid Pipelines with Smart Routing, Local Fallbacks, and Corrective RAG (CRAG)",
+    title:
+      "RAG in Depth: Resilient Hybrid Pipelines with Smart Routing, Local Fallbacks, and Corrective RAG (CRAG)",
     date: "2026-08-18",
     content: ragResilientHybridCrag,
   },

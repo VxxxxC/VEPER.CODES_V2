@@ -1,15 +1,18 @@
 # AGENTS.md
 
-Personal website ([veper.codes](https://veper.codes/)): React 19 + Vite 6 (SWC) + TypeScript + Tailwind CSS v4 + Chakra UI v3 + react-router v7. Single SPA, no backend, no monorepo.
+Personal website ([veper.codes](https://veper.codes/)): React 19 + Vite+ (`vp`, Vite 8 core) + TypeScript + Tailwind CSS v4 + Chakra UI v3 + react-router v7. Single SPA, no backend, no monorepo.
 
 ## Commands
 
-- `npm run dev` — Vite dev server
-- `npm run build` — `tsc -b && vite build` (typechecks first)
-- `npm run check` — standalone typecheck (`tsc --noEmit`)
-- `npm run lint` — `eslint .`
-- **No tests exist** (no test framework or script). Verification = `npm run check` + `npm run lint` + `npm run build`.
-- `npm run lint` currently **fails with 2 pre-existing errors + 4 warnings** (`no-empty-object-type`, `react-refresh/only-export-components`, `exhaustive-deps`). Don't "fix" unrelated files to make it pass; only ensure your changes add no new problems.
+Package manager is **bun** (`packageManager` in `package.json`); there is no npm lockfile. `vp` is the local `vite-plus` CLI (`bunx vp …` or `node_modules/.bin/vp`).
+
+- `bun run dev` — `vp dev` dev server
+- `bun run build` — `tsc -b && vp build` (typechecks first; bare `vp build` skips `tsc -b`)
+- `vp check` — built-in: Oxfmt format check + Oxlint + type-aware typecheck. `vp check --fix` / `vp fmt` to format.
+- `bun run check` (or `vp run check`) — the project's own strict `tsc --noEmit` script; not the same as `vp check`
+- `bun run lint` — `vp lint .` (Oxlint; ESLint is gone, rules live in the `lint` block of `vite.config.ts`)
+- **No tests exist.** `vp test` exits 1 with "No test files found". Verification = `vp check` + `bun run check` + `bun run build`.
+- `vp check` passes with **0 errors and 8 pre-existing warnings** (`only-export-components`, `exhaustive-deps`, React Compiler rules `set-state-in-effect`/`refs`/`purity`, `no-redundant-type-constituents`). Don't "fix" unrelated files to clear them; only ensure your changes add no new problems.
 
 ## Import aliases (defined in both `vite.config.ts` and `tsconfig.app.json`)
 

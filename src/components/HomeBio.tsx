@@ -1,20 +1,8 @@
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Icon,
-  Table,
-  Timeline,
-} from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Icon, Table, Timeline } from "@chakra-ui/react";
 import { useColorMode } from "@chakra/components/ui/color-mode";
 import { CgArrowsExchange } from "react-icons/cg";
 import { FaUserGraduate } from "react-icons/fa6";
-import {
-  MdKeyboardArrowRight,
-  MdOutlineWavingHand,
-  MdWorkOutline,
-} from "react-icons/md";
+import { MdKeyboardArrowRight, MdOutlineWavingHand, MdWorkOutline } from "react-icons/md";
 import { Link } from "react-router";
 
 const HomeBio = () => {
@@ -43,9 +31,7 @@ const HomeBio = () => {
             <Table.Body>
               <Table.Row>
                 <Table.Cell>2021</Table.Cell>
-                <Table.Cell>
-                  Say goodbye to my 12 years career in aviation engineering
-                </Table.Cell>
+                <Table.Cell>Say goodbye to my 12 years career in aviation engineering</Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>2021 - 2022</Table.Cell>
@@ -54,8 +40,7 @@ const HomeBio = () => {
               <Table.Row>
                 <Table.Cell>2022</Table.Cell>
                 <Table.Cell>
-                  Graduated AI & Programming Micro Master course at Tecky
-                  Academy
+                  Graduated AI & Programming Micro Master course at Tecky Academy
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
@@ -116,9 +101,7 @@ const HomeBio = () => {
               </Timeline.Indicator>
             </Timeline.Connector>
             <Timeline.Content>
-              <Timeline.Title textStyle="body">
-                Career Transition
-              </Timeline.Title>
+              <Timeline.Title textStyle="body">Career Transition</Timeline.Title>
               <Timeline.Description>2021 - 2022</Timeline.Description>
             </Timeline.Content>
           </Timeline.Item>

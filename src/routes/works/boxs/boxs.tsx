@@ -42,13 +42,13 @@ export const BoxsDuty = () => {
   return (
     <>
       <li>
-        Participating company Website, iOS/Android App UI, POS System UI revamp,
-        according from desigers Figma design
+        Participating company Website, iOS/Android App UI, POS System UI revamp, according from
+        desigers Figma design
       </li>
       <li>Create reuseable UI components</li>
       <li>
-        Collaborating with Designers, Project Manager, and CS team to defining
-        UX flow for shipping new features on POS system
+        Collaborating with Designers, Project Manager, and CS team to defining UX flow for shipping
+        new features on POS system
       </li>
       <li>Perform bug fix for old UI components or client reported issue</li>
     </>

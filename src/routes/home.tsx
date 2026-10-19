@@ -1,22 +1,9 @@
 import Selector from "@components/TechIcons";
 import MotionDiv from "@components/MotionDiv";
-import {
-  IoLogoGithub,
-  IoHeartOutline,
-  IoLogoInstagram,
-  IoLogoLinkedin,
-} from "react-icons/io5";
+import { IoLogoGithub, IoHeartOutline, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "./home.css";
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Link as ChakraLink,
-  Grid,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Link as ChakraLink, Grid, Text } from "@chakra-ui/react";
 import { useColorMode } from "@chakra/components/ui/color-mode";
 import HomeWelcomeMsg from "@components/HomeWelcomeMsg";
 import HomeBio from "@components/HomeBio";
@@ -32,14 +19,7 @@ const Home = () => {
     <>
       <HomeWelcomeMsg />
       <MotionDiv title="Home">
-        <Box
-          id="bio"
-          gapY={5}
-          aria-label="bio"
-          display="flex"
-          flexDir="column"
-          width="full"
-        >
+        <Box id="bio" gapY={5} aria-label="bio" display="flex" flexDir="column" width="full">
           <Box>
             <Flex
               direction={{ base: "column", lg: "row" }}
@@ -50,9 +30,7 @@ const Home = () => {
             >
               <div className="inline-flex flex-col items-center justify-center whitespace-nowrap">
                 <div className="my-2 text-4xl font-bold">Veper Ho</div>
-                <Box className="my-2 text-sm">
-                  Codes / Subcultures / Indie Music
-                </Box>
+                <Box className="my-2 text-sm">Codes / Subcultures / Indie Music</Box>
               </div>
               <img
                 className="w-60 h-60 border border-opacity-10 border-white rounded-3xl object-cover"
@@ -149,21 +127,13 @@ const Home = () => {
                 >
                   <Selector props="React" size={30} bgTransparent={true} />
                   <Selector props="Next" size={30} bgTransparent={true} />
-                  <Selector
-                    props="React Native"
-                    size={30}
-                    bgTransparent={true}
-                  />
+                  <Selector props="React Native" size={30} bgTransparent={true} />
                   <Selector props="Redux" size={30} bgTransparent={true} />
                   <Selector props="Vue" size={30} bgTransparent={true} />
                   <Selector props="Nuxt" size={30} bgTransparent={true} />
                   <Selector props="Svelte" size={30} bgTransparent={true} />
                   <Selector props="SvelteKit" size={30} bgTransparent={true} />
-                  <Selector
-                    props="Tailwindcss"
-                    size={30}
-                    bgTransparent={true}
-                  />
+                  <Selector props="Tailwindcss" size={30} bgTransparent={true} />
                   <Selector props="Ethersjs" size={30} bgTransparent={true} />
                 </Grid>
               </Flex>
@@ -189,11 +159,7 @@ const Home = () => {
                   <Selector props="Nodejs" size={30} bgTransparent={true} />
                   <Selector props="Socket.io" size={30} bgTransparent={true} />
                   <Selector props="Express" size={30} bgTransparent={true} />
-                  <Selector
-                    props="Feathers.js"
-                    size={30}
-                    bgTransparent={true}
-                  />
+                  <Selector props="Feathers.js" size={30} bgTransparent={true} />
                   <Selector props="PostgreSQL" size={30} bgTransparent={true} />
                   <Selector props="MongoDB" size={30} bgTransparent={true} />
                 </Grid>

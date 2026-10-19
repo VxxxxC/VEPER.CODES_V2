@@ -45,20 +45,12 @@ const WorkLayout = ({
       >
         <fieldset className="h-full w-full overflow-auto scroll-smooth text-left p-5 rounded-lg">
           <legend className="px-2 text-base font-medium">Duty</legend>
-          <Box
-            textStyle="body"
-            paddingX={5}
-            display="flex"
-            flexDirection="column"
-            gapY={3}
-          >
+          <Box textStyle="body" paddingX={5} display="flex" flexDirection="column" gapY={3}>
             {Duty}
           </Box>
         </fieldset>
         <fieldset className="w-full flex flex-col items-center justify-center text-left p-5 rounded-lg">
-          <legend className="px-2 text-base font-medium">
-            Tech Stack and Framework
-          </legend>
+          <legend className="px-2 text-base font-medium">Tech Stack and Framework</legend>
           <Box
             textStyle="body"
             padding={1}

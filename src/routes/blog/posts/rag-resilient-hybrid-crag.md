@@ -140,15 +140,15 @@ The flow is deliberate: classify first, retrieve second, evaluate third, generat
 
 ## 7. Summary Table: The Resilient Hybrid RAG Matrix
 
-| Component | Model / Tool | Hosting | Role | Failover Path |
-| --- | --- | --- | --- | --- |
-| **Smart Router** | Regex + Qwen 2.5 3B | Local (Ollama) | Classifies query complexity; manages API resiliency | None — must always be local and fast |
-| **Embedding Model** | BAAI/bge-m3 | Local / GPU edge | Translates text ↔ 1024-dim vectors for similarity search | Switch to a secondary embedding model or FTS-only mode |
-| **Vector Store** | PostgreSQL + pgvector | On-premise / cloud | Stores embeddings and enables hybrid vector + keyword search | Replicas or degraded search radius |
-| **CRAG Evaluator** | Fine-tuned classifier or structured-output grader | Local / small LLM | Scores retrieved chunks before generation | Default to conservative "Ambiguous" path |
-| **Generative LLM (Primary)** | GPT-4o, Claude 3.5 Sonnet | Cloud API | Complex synthesis, multi-hop reasoning, compliance answers | Circuit breaker → Local Ollama |
-| **Generative LLM (Fallback)** | Qwen 2.5 3B / 7B | Local (Ollama) | Fast gatekeeper, zero-token handler, emergency backup | Offline maintenance only |
-| **Web Search Fallback** | Tavily, Brave Search | External API | Fresh context when internal retrieval is insufficient | Retry with alternate search provider |
+| Component                     | Model / Tool                                      | Hosting            | Role                                                         | Failover Path                                          |
+| ----------------------------- | ------------------------------------------------- | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------ |
+| **Smart Router**              | Regex + Qwen 2.5 3B                               | Local (Ollama)     | Classifies query complexity; manages API resiliency          | None — must always be local and fast                   |
+| **Embedding Model**           | BAAI/bge-m3                                       | Local / GPU edge   | Translates text ↔ 1024-dim vectors for similarity search     | Switch to a secondary embedding model or FTS-only mode |
+| **Vector Store**              | PostgreSQL + pgvector                             | On-premise / cloud | Stores embeddings and enables hybrid vector + keyword search | Replicas or degraded search radius                     |
+| **CRAG Evaluator**            | Fine-tuned classifier or structured-output grader | Local / small LLM  | Scores retrieved chunks before generation                    | Default to conservative "Ambiguous" path               |
+| **Generative LLM (Primary)**  | GPT-4o, Claude 3.5 Sonnet                         | Cloud API          | Complex synthesis, multi-hop reasoning, compliance answers   | Circuit breaker → Local Ollama                         |
+| **Generative LLM (Fallback)** | Qwen 2.5 3B / 7B                                  | Local (Ollama)     | Fast gatekeeper, zero-token handler, emergency backup        | Offline maintenance only                               |
+| **Web Search Fallback**       | Tavily, Brave Search                              | External API       | Fresh context when internal retrieval is insufficient        | Retry with alternate search provider                   |
 
 ## 8. Conclusion
 

@@ -103,12 +103,7 @@ const DemoDropdownSelector = ({ props }: { props: DemoDropdownType[] }) => {
                               {name}
                             </Text>
 
-                            <Image
-                              rounded="md"
-                              fit="contain"
-                              maxHeight="50rem"
-                              src={img}
-                            />
+                            <Image rounded="md" fit="contain" maxHeight="50rem" src={img} />
                           </Box>
                         ),
                       )}

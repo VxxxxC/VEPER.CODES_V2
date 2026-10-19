@@ -20,10 +20,7 @@ export default function Navbar() {
       >
         <Box marginX={5}>
           <Link to="/">
-            <div
-              className="animate-flickering-neon relative"
-              aria-lable="header logo"
-            >
+            <div className="animate-flickering-neon relative" aria-lable="header logo">
               VEPER.CODES
             </div>
           </Link>
@@ -37,11 +34,7 @@ export default function Navbar() {
           alignItems="center"
           gapX={5}
         >
-          <Box
-            className="navbar"
-            display={{ base: "none", lg: "inline-flex" }}
-            gapX={5}
-          >
+          <Box className="navbar" display={{ base: "none", lg: "inline-flex" }} gapX={5}>
             <Link to="/works"> WORKS </Link>
             <Link to="/projects"> PROJECTS </Link>
             <Link to="/blog"> BLOG </Link>
@@ -51,10 +44,7 @@ export default function Navbar() {
             <ThemeToggle />
           </Box>
 
-          <Box
-            display={{ base: "inline-flex", lg: "none" }}
-            flexDirection="row"
-          >
+          <Box display={{ base: "inline-flex", lg: "none" }} flexDirection="row">
             <Menu.Root positioning={{ placement: "bottom-end" }}>
               <Menu.Trigger asChild>
                 <IconButton variant="outline" size="lg">

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-  @theme {
-    --animate-flickering-neon: flicker 1.5s infinite alternate;
+@theme {
+  --animate-flickering-neon: flicker 1.5s infinite alternate;
 
   /* Flickering animation */
   @keyframes flicker {
@@ -12,8 +12,15 @@
     53%,
     57%,
     100% {
-      text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #00e6ff,
-        0 0 80px #00e6ff, 0 0 90px #00e6ff, 0 0 100px #00e6ff, 0 0 150px #00e6ff;
+      text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #00e6ff,
+        0 0 80px #00e6ff,
+        0 0 90px #00e6ff,
+        0 0 100px #00e6ff,
+        0 0 150px #00e6ff;
     }
 
     20%,
@@ -22,5 +29,4 @@
       text-shadow: none;
     }
   }
-
-  }
+}

@@ -1,8 +1,5 @@
 import { Box, Container, Flex, Tabs, Text } from "@chakra-ui/react";
-import {
-  useColorMode,
-  useColorModeValue,
-} from "@chakra/components/ui/color-mode";
+import { useColorMode, useColorModeValue } from "@chakra/components/ui/color-mode";
 import { useEffect, useState } from "react";
 import MotionDiv from "./MotionDiv";
 
@@ -13,9 +10,7 @@ export type tabsPropsType = {
 };
 
 const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
-  const [selectedTab, setSelectedTab] = useState<tabsPropsType["value"]>(
-    tabs[0].value,
-  );
+  const [selectedTab, setSelectedTab] = useState<tabsPropsType["value"]>(tabs[0].value);
 
   const [textColor, setTextColor] = useState<string>("");
   const [bgColor, setBgColor] = useState<string>("");
@@ -43,11 +38,7 @@ const NestedTab = ({ tabs }: { tabs: tabsPropsType[] }) => {
             orientation="vertical"
             onValueChange={(e) => setSelectedTab(e.value)}
           >
-            <Flex
-              justify="start"
-              bg={useColorModeValue("gray.100", "gray.800")}
-              rounded="lg"
-            >
+            <Flex justify="start" bg={useColorModeValue("gray.100", "gray.800")} rounded="lg">
               {tabs.map(({ value, label }: tabsPropsType) => (
                 <Tabs.List
                   key={value}

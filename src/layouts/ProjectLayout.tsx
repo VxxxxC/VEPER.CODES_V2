@@ -72,13 +72,7 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
             })}
           </Flex>
 
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="start"
-            gapY={10}
-            marginY={10}
-          >
+          <Box display="flex" flexDirection="column" alignItems="start" gapY={10} marginY={10}>
             <Box display="block" spaceY={2}>
               {props.platform && props.mobile ? (
                 <>
@@ -146,12 +140,7 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
                   rounded="lg"
                   p={2}
                 >
-                  <Button
-                    size="xl"
-                    variant="surface"
-                    colorPalette="cyan"
-                    rounded="sm"
-                  >
+                  <Button size="xl" variant="surface" colorPalette="cyan" rounded="sm">
                     {props.title}
                     <MdKeyboardArrowRight size={22} />
                   </Button>
@@ -182,13 +171,7 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
             <Box width="full" className="flex my-4 gap-x-10 items-center">
               <fieldset className="h-full w-full overflow-auto scroll-smooth text-left p-5 rounded-lg">
                 <legend className="px-2 text-base font-medium">Features</legend>
-                <Box
-                  textStyle="body"
-                  paddingX={5}
-                  display="flex"
-                  flexDirection="column"
-                  gapY={3}
-                >
+                <Box textStyle="body" paddingX={5} display="flex" flexDirection="column" gapY={3}>
                   {props.feat.map((item, index) => {
                     return <li key={index}>{item}</li>;
                   })}
@@ -196,9 +179,7 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
               </fieldset>
             </Box>
             <fieldset className="w-full flex flex-col items-center justify-center text-left p-5 rounded-lg">
-              <legend className="px-2 text-base font-medium">
-                Tech Stack and Framework
-              </legend>
+              <legend className="px-2 text-base font-medium">Tech Stack and Framework</legend>
               <Box
                 textStyle="body"
                 padding={1}

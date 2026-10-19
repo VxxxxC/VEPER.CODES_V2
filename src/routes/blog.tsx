@@ -18,11 +18,7 @@ export default function Blog() {
       <Box height="2px" width="full" bgColor="cyan.500" marginBottom={6} />
       <Box width="full" display="flex" flexDir="column" gap={6}>
         {posts.map((post) => (
-          <Link
-            key={post.slug}
-            to={`/blog/${post.slug}`}
-            style={{ textDecoration: "none" }}
-          >
+          <Link key={post.slug} to={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
             <Box
               as="article"
               width="full"
@@ -43,12 +39,7 @@ export default function Blog() {
                 borderColor: "rgba(238, 238, 225, 0.6)",
               }}
             >
-              <Text
-                textStyle="header"
-                textAlign="left"
-                lineClamp={2}
-                color="#EEEEE1"
-              >
+              <Text textStyle="header" textAlign="left" lineClamp={2} color="#EEEEE1">
                 {post.title}
               </Text>
               <Text
