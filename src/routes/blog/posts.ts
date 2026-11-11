@@ -1,3 +1,4 @@
+import miniDaoLessons from "./posts/mini-dao-lessons.md?raw";
 import ragResilientHybridCrag from "./posts/rag-resilient-hybrid-crag.md?raw";
 import ragLangchainLanggraph from "./posts/rag-langchain-langgraph.md?raw";
 import ragPostgresPgvector from "./posts/rag-postgres-pgvector.md?raw";
@@ -10,6 +11,12 @@ export interface BlogPostType {
 }
 
 const posts: BlogPostType[] = [
+  {
+    slug: "mini-dao-lessons",
+    title: "What I Learned Building a Mini DAO",
+    date: "2026-11-10",
+    content: miniDaoLessons,
+  },
   {
     slug: "rag-resilient-hybrid-crag",
     title:
