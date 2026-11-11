@@ -9,6 +9,8 @@ const MiniDao = () => {
 
   const link = "https://mini-dao.netlify.app/";
 
+  const blog = "/blog/mini-dao-lessons";
+
   const desc = "A full-stack Web3 governance DAO governance platform.";
 
   const alert =
@@ -42,6 +44,7 @@ const MiniDao = () => {
     feat,
     techIcons,
     link,
+    blog,
     alert,
   };
 

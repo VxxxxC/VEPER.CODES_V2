@@ -8,6 +8,7 @@ import MotionDiv from "@components/MotionDiv.tsx";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Alert, Button, Link as ChakraLink } from "@chakra-ui/react";
 import { PiWarningCircle } from "react-icons/pi";
+import { Link as RouterLink } from "react-router";
 
 export type mobileType = "iOS" | "Android" | "Duo";
 
@@ -20,6 +21,7 @@ export type projectPropsType =
       techIcons: string[];
       platform?: false;
       link?: string;
+      blog?: string;
       alert?: string;
     }
   | {
@@ -31,6 +33,7 @@ export type projectPropsType =
       platform: true;
       mobile: mobileType;
       link?: string;
+      blog?: string;
       alert?: string;
     };
 
@@ -145,6 +148,17 @@ const ProjectLayout = ({ props }: { props: projectPropsType }) => {
                     <MdKeyboardArrowRight size={22} />
                   </Button>
                 </ChakraLink>
+              ) : null}
+
+              {props.blog ? (
+                <Box display="flex" justifyContent="center" p={2}>
+                  <Button asChild size="xl" variant="outline" colorPalette="cyan" rounded="sm">
+                    <RouterLink to={props.blog}>
+                      Read the blog post
+                      <MdKeyboardArrowRight size={22} />
+                    </RouterLink>
+                  </Button>
+                </Box>
               ) : null}
 
               <Box
